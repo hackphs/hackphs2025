@@ -1,1 +1,12 @@
 /* Jonathan write epic stuff here! */
+
+:root {
+    color: black;
+    font-family: "Figtree";
+    font-weight: 900;
+    font-size: large;
+}
+
+* {
+    transition: all 2s;
+}
