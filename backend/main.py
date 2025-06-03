@@ -21,8 +21,8 @@ def add_registration():
         with open ("emails.json",'r') as f: emails = set(json.load(f))
         emails.add(email)
         with open ("emails.json",'w') as f: json.dump(list(emails),f)
-    except:
-        return "E", 200, {"Access-Control-Allow-Origin": "*"}
+    except Exception as e:
+        return str(e), 200, {"Access-Control-Allow-Origin": "*"}
     return "W", 200, {"Access-Control-Allow-Origin": "*"} # W --> added
 
 # OMFG IT WORKS 
