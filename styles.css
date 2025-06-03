@@ -1,12 +1,12 @@
 /* Jonathan write epic stuff here! */
 
 :root {
-    color: black;
+    color: blue;
     font-family: "Figtree";
     font-weight: 900;
-    font-size: large;
+    font-size: 1rem;
 }
 
 * {
-    transition: all 2s;
+    transition: all 0.2s;
 }
