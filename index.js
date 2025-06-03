@@ -21,7 +21,7 @@ submit.addEventListener("click", e => {
     fetch("https://hackphs.pythonanywhere.com", {
         method: "POST",
         body: { "email": emailInp.value }
-    })
+    }).then(res => console.log(res));
 
     // Then replace the unnotified class on the button with notified
 
