@@ -2,7 +2,7 @@
 
 import json, os, markupsafe
 from flask import Flask, request, make_response
-from flask_cors import CORS, cross_origin
+# from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
 
@@ -12,7 +12,6 @@ if not os.path.exists("emails.json"):
     with open ("emails.json",'w') as f: f.write("[]")
 
 @app.route("/",methods=["GET"])
-@cross_origin()
 def add_registration():
     global emails
     try:
