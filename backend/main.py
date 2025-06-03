@@ -14,7 +14,7 @@ if not os.path.exists("emails.json"):
 def add_registration():
     global emails
     try:
-        email = request.get_json().get("email")
+        email = request.get_json(force=True).get("email")
 
         if email in emails:
             return "L", 200, {"Access-Control-Allow-Origin": "*"} # L --> not added
