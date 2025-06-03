@@ -1,7 +1,7 @@
 /* Jonathan write epic stuff here! */
 
 :root {
-    color: blue;
+    color: white;
     font-family: "Figtree";
     font-weight: 900;
     font-size: 1rem;
@@ -9,4 +9,32 @@
 
 * {
     transition: all 0.2s;
+}
+
+body {
+    background-position: center;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: rgb(73, 52, 112);
+    background-image: url("static/bg-temp.png");
+}
+
+h1 {
+    margin: 0;
+}
+
+#outer {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+#container {
+    background: rgba(254, 254, 254, 0.189);
+    backdrop-filter: blur(50px);
+    padding: 2rem;
+    border-radius: 2rem;
 }
