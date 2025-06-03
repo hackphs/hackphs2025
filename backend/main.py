@@ -18,13 +18,13 @@ def add_registration():
         email = request.args["email"]
 
         if email in emails:
-            return "L", 200 # L --> not added
+            return "L", 200, {"Access-Control-Allow-Origin": ""} # L --> not added
         with open ("emails.json",'r') as f: emails = set(json.load(f))
         emails.add(email)
         with open ("emails.json",'w') as f: json.dump(list(emails),f)
     except:
-        return "LA", 200
-    return "W",200 # W --> added
+        return "LA", 200, {"Access-Control-Allow-Origin": ""}
+    return "W", 200, {"Access-Control-Allow-Origin": ""} # W --> added
 
 if __name__ == "__main__":
     app.run("127.0.0.1",8000)
