@@ -18,10 +18,7 @@ submit.addEventListener("click", e => {
     // Our post content should be a json with email = [the email]
     // https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
 
-    fetch("https://hackphs.pythonanywhere.com", {
-        method: "POST",
-        body: { "email": emailInp.value }
-    }).then(res => console.log(res));
+
 
     // Then replace the unnotified class on the button with notified
 
