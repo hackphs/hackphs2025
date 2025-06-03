@@ -141,3 +141,23 @@ h3 {
     font-size: 1.1rem;
     font-weight: 500;
 }
+
+i.fa-check {
+    color: rgb(115, 255, 115);
+}
+
+button.unnotified i.fa-check {
+    display: none;
+}
+
+button.notified i.fa-check {
+    display: block;
+}
+
+button.notified p {
+    display: none;
+}
+
+p {
+    margin: 0;
+}
