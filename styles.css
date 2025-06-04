@@ -4,6 +4,7 @@
     color: white;
     font-family: "Figtree";
     font-size: 1rem;
+    background: rgb(184 193 215);
 }
 
 * {
@@ -12,11 +13,12 @@
 
 body {
     background-position: 52% 50%, center;
-    background-size: cover, cover;
+    background-size: cover;
     margin: 0;
     padding: 0;
     height: 100vh;
     background-image: url("static/mountain.svg"), linear-gradient(rgb(184 193 215), rgb(247 177 176));
+    background-repeat: no-repeat;
 }
 
 h1 {
