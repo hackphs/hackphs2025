@@ -1009,10 +1009,10 @@
             <path style=" stroke:none;fill-rule:nonzero;fill:url(#linear0);"
                 d="M 0 0.140625 L 0 575.859375 L 1024 575.859375 L 1024 0.140625 Z M 0 0.140625 " />
         </g> -->
-        <g clip-rule="nonzero" clip-path="url(#2da802761c)">
+        <!-- <g clip-rule="nonzero" clip-path="url(#2da802761c)">
             <path style=" stroke:none;fill-rule:nonzero;fill:url(#linear1);"
                 d="M 0 0.140625 L 0 570.113281 L 1024 570.113281 L 1024 0.140625 Z M 0 0.140625 " />
-        </g>
+        </g> -->
         <g clip-rule="nonzero" clip-path="url(#7655225726)">
             <g clip-rule="nonzero" clip-path="url(#bee47f3f6f)">
                 <path style=" stroke:none;fill-rule:nonzero;fill:#ffa477;fill-opacity:1;"
