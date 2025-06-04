@@ -3,38 +3,202 @@
 :root {
     color: white;
     font-family: "Figtree";
-    font-weight: 900;
     font-size: 1rem;
+    background: rgb(184 193 215);
 }
 
 * {
-    transition: all 0.2s;
+    transition: all 0.5s;
 }
 
 body {
-    background-position: center;
+    background-position: 52% 50%, center;
     background-size: cover;
     margin: 0;
     padding: 0;
     height: 100vh;
-    background-color: rgb(73, 52, 112);
-    background-image: url("static/bg-temp.png");
+    background-image: url("static/mountain.svg"), linear-gradient(rgb(184 193 215), rgb(247 177 176));
+    background-repeat: no-repeat;
 }
 
-h1 {
-    margin: 0;
-}
 
 #outer {
     display: flex;
     height: 100vh;
-    justify-content: center;
-    align-items: center;
+    padding: 2rem;
+    box-sizing: border-box;
 }
 
 #container {
-    background: rgba(254, 254, 254, 0.189);
-    backdrop-filter: blur(50px);
-    padding: 2rem;
-    border-radius: 2rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    align-items: center;
+    gap: 2rem;
+}
+
+#email-add {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+input,
+button {
+    background: #0005;
+    border: 1px #bbb solid;
+    border-radius: 0.5rem;
+    backdrop-filter: blur(1rem);
+    color: white;
+    position: relative;
+    top: 0;
+    transition: top 0.1s, all 0.2s;
+
+    font-family: "Figtree";
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+input {
+    width: 10px;
+    flex-grow: 1;
+}
+
+button:hover {
+    cursor: pointer;
+    background: #bbb5;
+}
+
+button:active {
+    top: 0.1rem;
+}
+
+#email-add button {
+    max-width: 12ch;
+    min-width: 8ch;
+}
+
+input::placeholder {
+    font-style: italic;
+    color: #ccc;
+}
+
+#container a {
+    color: #cdf;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+#container a:hover {
+    text-decoration: underline;
+}
+
+form {
+    margin-top: 0.5rem;
+}
+
+h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+i.fa-check {
+    color: rgb(115, 255, 115);
+}
+
+button.unnotified i.fa-check {
+    display: none;
+}
+
+button.notified i.fa-check {
+    display: block;
+}
+
+button.notified p {
+    display: none;
+}
+
+img#icon {
+    position: absolute;
+    width: 6rem;
+    margin: 1rem;
+}
+
+h1 {
+    font-size: 6rem;
+    margin: 0;
+    margin-top: 4rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-style: italic;
+    font-weight: 200;
+    margin: 0;
+    margin-bottom: 1rem;
+}
+
+#desc {
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(1rem);
+    border-radius: 1rem;
+    padding: 1rem;
+    max-width: 50ch;
+}
+
+#desc p {
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+#desc h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+@media screen and (max-width:750px) {
+    #outer {
+        padding: 2rem 1rem 1rem 1rem;
+    }
+
+    h1 {
+        font-size: 10vw;
+        text-align: center;
+        margin-top: 6rem;
+        margin-bottom: 0;
+        border-radius: 10rem;
+        padding: 0.5rem 1.5rem;
+        background: rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(1rem);
+    }
+
+    h2 {
+        font-size: 4vw;
+        background: rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(1rem);
+        padding: 1rem;
+        border-radius: 10rem;
+        margin-top: 1rem;
+    }
+
+    #container {
+        justify-items: center;
+        width: 100%;
+    }
+}
+
+@media screen and (max-height:650px) and (min-width:750px) {
+    img#icon {
+        width: 4rem;
+    }
+
+    h1 {
+        margin-top: 2rem;
+        margin-bottom: 0;
+        font-size: 14vh;
+    }
+
+    h2 {
+        font-size: 7vh;
+    }
 }

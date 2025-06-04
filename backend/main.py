@@ -14,11 +14,17 @@ if not os.path.exists("emails.json"):
 def add_registration():
     global emails
     try:
-        email = str(json.loads(request.data.decode())["email"])
+        email = request.get_json(force=True).get("email")
 
-        if email in emails: return "L", 200 # L --> not added
+        if email in emails:
+            return "L", 200, {"Access-Control-Allow-Origin": "*"} # L --> not added
         with open ("emails.json",'r') as f: emails = set(json.load(f))
         emails.add(email)
         with open ("emails.json",'w') as f: json.dump(list(emails),f)
-    except: return "L", 500
-    return "W", 200 # W --> added
+    except Exception as e:
+        return str(e), 200, {"Access-Control-Allow-Origin": "*"}
+    return "W", 200, {"Access-Control-Allow-Origin": "*"} # W --> added
+
+# OMFG IT WORKS 
+# I FEEL SO SMART
+# I DID EXACTLY WHAT CHROME TOLD ME TO DO WOWOWOWOOWOWOW SO BIGGUS BRAINUS HAJKFDHKHAKJFHJK KJHFAKJDSAHKJFHKSDJHJKFHDKSJHKF GENIUS MOMENT
