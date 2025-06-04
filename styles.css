@@ -21,10 +21,6 @@ body {
     background-repeat: no-repeat;
 }
 
-h1 {
-    margin: 0;
-    margin-bottom: 1rem;
-}
 
 #outer {
     display: flex;
@@ -46,13 +42,20 @@ h1 {
     gap: 1rem;
 }
 
-#email-add input,
+input,
 button {
     background: #0005;
     border: 1px #bbb solid;
     border-radius: 0.5rem;
     backdrop-filter: blur(1rem);
     color: white;
+    position: relative;
+    top: 0;
+    transition: top 0.1s, all 0.2s;
+
+    font-family: "Figtree";
+    padding: 0.5rem;
+    font-size: 1rem;
 }
 
 input {
@@ -60,13 +63,13 @@ input {
     flex-grow: 1;
 }
 
-input:focus {
-    background: red;
-}
-
 button:hover {
     cursor: pointer;
     background: #bbb5;
+}
+
+button:active {
+    top: 0.1rem;
 }
 
 #email-add button {
@@ -77,14 +80,6 @@ button:hover {
 input::placeholder {
     font-style: italic;
     color: #ccc;
-}
-
-
-input,
-button {
-    font-family: "Figtree";
-    padding: 0.5rem;
-    font-size: 1rem;
 }
 
 #container a {
@@ -122,10 +117,6 @@ button.notified p {
     display: none;
 }
 
-p {
-    margin: 0;
-}
-
 img#icon {
     position: absolute;
     width: 6rem;
@@ -134,7 +125,9 @@ img#icon {
 
 h1 {
     font-size: 6rem;
+    margin: 0;
     margin-top: 4rem;
+    margin-bottom: 1rem;
 }
 
 h2 {
@@ -146,7 +139,6 @@ h2 {
 }
 
 #desc {
-    /* max-width: 50vw; */
     background: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(1rem);
     border-radius: 1rem;
@@ -156,6 +148,7 @@ h2 {
 
 #desc p {
     font-size: 1.1rem;
+    margin: 0;
 }
 
 #desc h3 {
@@ -189,13 +182,12 @@ h2 {
     }
 
     #container {
-        /* align-content: center; */
         justify-items: center;
         width: 100%;
     }
 }
 
-@media screen and (max-height:750px) and (min-width:750px) {
+@media screen and (max-height:650px) and (min-width:750px) {
     img#icon {
         width: 5rem;
     }
