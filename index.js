@@ -72,14 +72,9 @@ window.addEventListener("keydown", e => {
         flown = true;
         birdy.animate(birdFly, {
             duration: 3000,
-            iterations: 1
+            iterations: 1,
+            fill: "forwards"
         });
-        setTimeout(() => {
-            birdy.style.top = birdFly[birdFly.length - 1].top;
-            birdy.style.right = birdFly[birdFly.length - 1].right;
-        }, 3000);
-        document.querySelector("#birdy").style.setProperty("display", "inline");
         sleep(2000).then(() => { document.querySelector("h1").style.setProperty("color", "rgba(62,151,192,255)"); });
-
     }
 });

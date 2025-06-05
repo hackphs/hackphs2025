@@ -24,18 +24,41 @@
 }
 
 body {
-
-    background-position: 52% 50%, center;
-    background-size: cover;
     margin: 0;
     padding: 0;
     height: 100vh;
-    background-image: url("static/mountain.svg"), linear-gradient(var(--grad-1), var(--grad-2));
-    background-repeat: no-repeat;
     overflow-x: hidden;
+    background: linear-gradient(var(--grad-1), var(--grad-2)) center/cover no-repeat;
+    transition-timing-function: linear;
 
     transition: --grad-1 15s, --grad-2 15s;
-    transition-timing-function: linear;
+}
+
+/* The background */
+body::before {
+    content: "";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    background-image: url("static/mountain.svg");
+    background-repeat: no-repeat;
+    background-position: 52% 50%;
+    background-size: cover;
+    filter: hue-rotate(360deg);
+
+    transition: filter 15s;
+}
+
+body.sunset::before {
+    filter: hue-rotate(350deg);
+}
+
+body.night::before {
+    filter: hue-rotate(335deg);
 }
 
 body.sunset {
