@@ -239,8 +239,6 @@ h2 {
     animation-fill-mode: both;
     animation-timing-function: linear;
     z-index: 0;
-    display: none;
-    /* this guy is too problematic :( */
 }
 
 @keyframes fly {
