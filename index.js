@@ -41,46 +41,48 @@ const lastPressed = []; // change
 const thing = []; // no change
 
 function sleep(ms) {
-return new Promise(resolve => setTimeout(resolve, ms));
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
-window.addEventListener("keydown", e => {
-    lastPressed.push(e.key);
-    if (lastPressed.length<5) {
-        //return;
-    }
-    let n = lastPressed.length;
-    if (lastPressed[n-1]=="c" && lastPressed[n-2]=="x" && ((lastPressed[n-3]=="ArrowDown" && lastPressed[n-4]=="ArrowRight") || (lastPressed[n-3]=="ArrowRight" && lastPressed[n-4]=="ArrowDown")) && lastPressed[n-5]=="c") {
-        document.querySelector("#birdy").style.setProperty("--rep", "1");
-        document.querySelector("#birdy").style.setProperty("display", "inline");
-        sleep(2000).then(() => {document.querySelector("h1").style.setProperty("color", "rgba(62,151,192,255)");});
-        
-    }
-})
 
+/** @type {Keyframe[]} */
 const birdFly = [
     { top: "0px", right: "-200px" },
-    { top: "50px", right: "32%" },
-    { top: "90px", right: "32%" }
+    {
+        top: "30px",
+        right: "33%",
+        offset: 0.4
+    },
+    {
+        top: "25px",
+        right: "33%",
+        offset: 0.65
+    },
+    {
+        top: "90px",
+        right: "32%"
+    }
 ];
 
-const birdFlyTiming = {
-    duration: 3000,
-    iterations: 1
-};
-
 let flown = false;
-
 window.addEventListener("keydown", e => {
-    //lastPressed.push(e.key.toLowerCase());
-    // if (lastPressed.length < 5) return;
-
-    // //document.querySelector("#birdy").style.setProperty("--rep", "1");
+    lastPressed.push(e.key);
+    let n = lastPressed.length;
+    if (n < 5) return;
     if (flown) return;
     const birdy = document.querySelector("#birdy");
-    flown = true;
-    birdy.animate(birdFly, birdFlyTiming);
-    setTimeout(() => {
-        birdy.style.top = birdFly[birdFly.length - 1].top;
-        birdy.style.right = birdFly[birdFly.length - 1].right;
-    }, 3000);
+
+    if (lastPressed[n - 1] == "c" && lastPressed[n - 2] == "x" && ((lastPressed[n - 3] == "ArrowDown" && lastPressed[n - 4] == "ArrowRight") || (lastPressed[n - 3] == "ArrowRight" && lastPressed[n - 4] == "ArrowDown")) && lastPressed[n - 5] == "c") {
+        flown = true;
+        birdy.animate(birdFly, {
+            duration: 3000,
+            iterations: 1
+        });
+        setTimeout(() => {
+            birdy.style.top = birdFly[birdFly.length - 1].top;
+            birdy.style.right = birdFly[birdFly.length - 1].right;
+        }, 3000);
+        document.querySelector("#birdy").style.setProperty("display", "inline");
+        sleep(2000).then(() => { document.querySelector("h1").style.setProperty("color", "rgba(62,151,192,255)"); });
+
+    }
 });

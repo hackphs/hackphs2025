@@ -234,26 +234,8 @@ h2 {
     position: absolute;
     width: 100px;
     z-index: 0;
-
-@keyframes fly {
-    from {
-        top: 0px;
-        right: -200px;
-    }
-    40% {
-        top: 30px;
-        right: 33%;
-    }
-    65% {
-        top: 25px;
-        right: 33%;
-    }
-
-    to {
-        top: 60px;
-        right: 33%;
-    }
-
+    top: 0px;
+    right: -200px;
 }
 
 h1 {
