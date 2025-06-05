@@ -24,6 +24,8 @@ button.addEventListener("click", e => {
 
     button.className = "notified";
 
+    addEventListener("input", () => { button.className = "unnotified"; });
+
     if (emailInp.value == "storby@hackphs.tech") {
         document.body.className = "sunset";
         setTimeout(() => document.body.className = "night", 14500);
