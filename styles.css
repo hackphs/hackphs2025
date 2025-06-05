@@ -248,15 +248,18 @@ h2 {
         top: 0px;
         right: -200px;
     }
-
-    90% {
-        top: 50px;
-        right: 32%;
+    40% {
+        top: 30px;
+        right: 33%;
+    }
+    65% {
+        top: 25px;
+        right: 33%;
     }
 
     to {
-        top: 90px;
-        right: 32%;
+        top: 60px;
+        right: 33%;
     }
 
 }

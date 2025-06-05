@@ -40,22 +40,26 @@ button.addEventListener("click", async e => {
 const lastPressed = []; // change
 const thing = []; // no change
 
-
-
+function sleep(ms) {
+return new Promise(resolve => setTimeout(resolve, ms));
+}
 window.addEventListener("keydown", e => {
     lastPressed.push(e.key);
     if (lastPressed.length<5) {
-        return;
+        //return;
     }
     let n = lastPressed.length;
     if (lastPressed[n-1]=="c" && lastPressed[n-2]=="x" && ((lastPressed[n-3]=="ArrowDown" && lastPressed[n-4]=="ArrowRight") || (lastPressed[n-3]=="ArrowRight" && lastPressed[n-4]=="ArrowDown")) && lastPressed[n-5]=="c") {
-        // BIRD!!
+        document.querySelector("#birdy").style.setProperty("--rep", "1");
+        document.querySelector("#birdy").style.setProperty("display", "inline");
+        sleep(2000).then(() => {document.querySelector("h1").style.setProperty("color", "rgba(62,151,192,255)");});
+        
     }
 })
 
 window.addEventListener("keydown", e => {
-    lastPressed.push(e.key.toLowerCase());
+    //lastPressed.push(e.key.toLowerCase());
     // if (lastPressed.length < 5) return;
 
-    document.querySelector("#birdy").style.setProperty("--rep", "1");
+    //document.querySelector("#birdy").style.setProperty("--rep", "1");
 });
