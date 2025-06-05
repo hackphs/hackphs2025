@@ -32,6 +32,7 @@ body {
     height: 100vh;
     background-image: url("static/mountain.svg"), linear-gradient(var(--grad-1), var(--grad-2));
     background-repeat: no-repeat;
+    overflow-x: hidden;
 
     transition: --grad-1 15s, --grad-2 15s;
     transition-timing-function: linear;
@@ -230,18 +231,9 @@ h2 {
 }
 
 #birdy {
-    --rep: 0;
     position: absolute;
     width: 100px;
-    animation-name: fly;
-    animation-iteration-count: var(--rep);
-    animation-duration: 5s;
-    animation-fill-mode: both;
-    animation-timing-function: linear;
     z-index: 0;
-    display: none;
-    /* this guy is too problematic :( */
-}
 
 @keyframes fly {
     from {
