@@ -51,9 +51,30 @@ window.addEventListener("keydown", e => {
     }
 })
 
+const birdFly = [
+    { top: "0px", right: "-200px" },
+    { top: "50px", right: "32%" },
+    { top: "90px", right: "32%" }
+];
+
+const birdFlyTiming = {
+    duration: 3000,
+    iterations: 1
+};
+
+let flown = false;
+
 window.addEventListener("keydown", e => {
     lastPressed.push(e.key.toLowerCase());
     // if (lastPressed.length < 5) return;
 
-    document.querySelector("#birdy").style.setProperty("--rep", "1");
+    // document.querySelector("#birdy").style.setProperty("--rep", "1");
+    if (flown) return;
+    const birdy = document.querySelector("#birdy");
+    flown = true;
+    birdy.animate(birdFly, birdFlyTiming);
+    setTimeout(() => {
+        birdy.style.top = birdFly[birdFly.length - 1].top;
+        birdy.style.right = birdFly[birdFly.length - 1].right;
+    }, 3000);
 });
