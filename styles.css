@@ -28,7 +28,10 @@ body {
     padding: 0;
     height: 100vh;
     overflow-x: hidden;
-    background: linear-gradient(var(--grad-1), var(--grad-2)) center/cover no-repeat;
+    background: linear-gradient(var(--grad-1), var(--grad-2));
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     transition-timing-function: linear;
 
     transition: --grad-1 15s, --grad-2 15s;
@@ -38,7 +41,7 @@ body {
 body::before {
     content: "";
     display: block;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     bottom: 0;

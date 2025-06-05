@@ -1013,18 +1013,23 @@
             <path style=" stroke:none;fill-rule:nonzero;fill:url(#linear1);"
                 d="M 0 0.140625 L 0 570.113281 L 1024 570.113281 L 1024 0.140625 Z M 0 0.140625 " />
         </g> -->
+
         <g clip-rule="nonzero" clip-path="url(#7655225726)">
             <g clip-rule="nonzero" clip-path="url(#bee47f3f6f)">
-                <path style=" stroke:none;fill-rule:nonzero;fill:#ffa477;fill-opacity:1;"
-                    d="M 459.109375 311.519531 L 559.523438 311.519531 L 559.523438 411.929688 L 459.109375 411.929688 Z M 459.109375 311.519531 " />
+                <path style=" stroke:none;fill-rule:nonzero;fill:##ffa477;fill-opacity:1;"
+                    d="M 459.109375 311.519531 L 559.523438 311.519531 L 559.523438 411.929688 L 459.109375 411.929688
+        Z M 459.109375 311.519531 " />
             </g>
         </g>
+
+        <!-- The ground -->
         <g clip-rule="nonzero" clip-path="url(#a105287ff9)">
             <g mask="url(#650ad36c97)" transform="matrix(1,0,0,1,0,507)">
                 <g clip-path="url(#ca1aebb1dd)">
                     <g clip-rule="nonzero" clip-path="url(#406673762b)">
                         <path style=" stroke:none;fill-rule:nonzero;fill:#3d1e17;fill-opacity:1;"
-                            d="M -41.203125 0.867188 L 1043.023438 0.867188 L 1043.023438 164.523438 L -41.203125 164.523438 Z M -41.203125 0.867188 " />
+                            d="M -41.203125 0.867188 L 1043.023438 0.867188 L 1043.023438 164.523438 L -41.203125 164.523438 Z
+        M -41.203125 0.867188 " />
                     </g>
                 </g>
                 <mask id="650ad36c97">
@@ -1035,52 +1040,68 @@
                 </mask>
             </g>
         </g>
+
+        <!-- Main peak on big mountain -->
         <g clip-rule="nonzero" clip-path="url(#3d6c48b0ff)">
             <g clip-rule="nonzero" clip-path="url(#4e5f440766)">
                 <path style=" stroke:none;fill-rule:nonzero;fill:#45202f;fill-opacity:1;"
                     d="M 287.347656 133.480469 L 1015.28125 133.480469 L 1015.28125 509.949219 L 287.347656 509.949219 Z M 287.347656 133.480469 " />
             </g>
         </g>
+
+        <!-- Right peak on big mountain -->
         <g clip-rule="nonzero" clip-path="url(#a1050d3226)">
             <g clip-rule="nonzero" clip-path="url(#29bb7ca958)">
                 <g clip-rule="nonzero" clip-path="url(#1afa915ff4)">
                     <path style=" stroke:none;fill-rule:nonzero;fill:#45202f;fill-opacity:1;"
-                        d="M 754.003906 284.039062 L 924.871094 292.429688 L 918.984375 412.269531 L 748.121094 403.875 Z M 754.003906 284.039062 " />
+                        d="M 754.003906 284.039062 L 924.871094 292.429688 L 918.984375 412.269531 L 748.121094 403.875 Z M
+        754.003906 284.039062 " />
                 </g>
             </g>
         </g>
+
+        <!-- Middle-upper-left peak on big mountain -->
         <g clip-rule="nonzero" clip-path="url(#ac5de352a4)">
             <g clip-rule="nonzero" clip-path="url(#79be57116f)">
                 <path style=" stroke:none;fill-rule:nonzero;fill:#45202f;fill-opacity:1;"
-                    d="M 452.011719 185.488281 L 626.746094 185.488281 L 626.746094 350.550781 L 452.011719 350.550781 Z M 452.011719 185.488281 " />
+                    d="M 452.011719 185.488281 L 626.746094 185.488281 L 626.746094 350.550781 L 452.011719 350.550781
+        Z M 452.011719 185.488281 " />
             </g>
         </g>
+        <!-- Left peak on big mountain -->
         <g clip-rule="nonzero" clip-path="url(#e2e65d4ae8)">
             <g clip-rule="nonzero" clip-path="url(#50e77063b5)">
                 <g clip-rule="nonzero" clip-path="url(#ccf9fc3a19)">
                     <path style=" stroke:none;fill-rule:nonzero;fill:#45202f;fill-opacity:1;"
-                        d="M 278.074219 371.101562 L 490.269531 354.75 L 500.921875 492.972656 L 288.726562 509.324219 Z M 278.074219 371.101562 " />
+                        d="M 278.074219 371.101562 L 490.269531 354.75 L 500.921875 492.972656 L 288.726562 509.324219 Z M
+        278.074219 371.101562 " />
                 </g>
             </g>
         </g>
+        <!-- Left peak on small mountain -->
         <g clip-rule="nonzero" clip-path="url(#bbcc090a52)">
             <g clip-rule="nonzero" clip-path="url(#4a62585a5a)">
                 <path style=" stroke:none;fill-rule:nonzero;fill:#532e3c;fill-opacity:1;"
                     d="M 539.484375 348.828125 L 705.519531 348.828125 L 705.519531 512.308594 L 539.484375 512.308594 Z M 539.484375 348.828125 " />
             </g>
         </g>
+        <!-- Main part of small mountain -->
         <g clip-rule="nonzero" clip-path="url(#433a63d74c)">
             <g clip-rule="nonzero" clip-path="url(#26d546d118)">
                 <path style=" stroke:none;fill-rule:nonzero;fill:#532e3c;fill-opacity:1;"
-                    d="M 552.191406 256.933594 L 957.199219 256.933594 L 957.199219 512.308594 L 552.191406 512.308594 Z M 552.191406 256.933594 " />
+                    d="M 552.191406 256.933594 L 957.199219 256.933594 L 957.199219 512.308594 L 552.191406 512.308594
+        Z M 552.191406 256.933594 " />
             </g>
         </g>
+        <!-- Right peak on small mountain -->
         <g clip-rule="nonzero" clip-path="url(#a408639ee5)">
             <g clip-rule="nonzero" clip-path="url(#0449baa18e)">
                 <path style=" stroke:none;fill-rule:nonzero;fill:#532e3c;fill-opacity:1;"
-                    d="M 883.492188 420.605469 L 1022.867188 420.605469 L 1022.867188 511.628906 L 883.492188 511.628906 Z M 883.492188 420.605469 " />
+                    d="M 883.492188 420.605469 L 1022.867188 420.605469 L 1022.867188 511.628906 L 883.492188
+        511.628906 Z M 883.492188 420.605469 " />
             </g>
         </g>
+        <!-- Stars -->
         <g clip-rule="nonzero" clip-path="url(#8f6dce30f3)">
             <path style=" stroke:none;fill-rule:nonzero;fill:#ffffff;fill-opacity:1;"
                 d="M 536.71875 82.433594 L 558.503906 80.964844 L 536.71875 79.5 L 535.253906 57.710938 L 533.785156 79.5 L 512 80.964844 L 533.785156 82.433594 L 535.253906 104.214844 Z M 536.71875 82.433594 " />
@@ -1195,6 +1216,7 @@
         </g>
         <path style=" stroke:none;fill-rule:nonzero;fill:#ffffff;fill-opacity:1;"
             d="M 912.25 45.699219 L 921.425781 53.71875 L 913.410156 44.542969 L 921.425781 35.371094 L 912.25 43.386719 L 903.078125 35.371094 L 911.09375 44.542969 L 903.078125 53.71875 Z M 912.25 45.699219 " />
+        <!-- Cacti -->
         <g clip-rule="nonzero" clip-path="url(#c17eb6627d)">
             <g clip-rule="nonzero" clip-path="url(#e50ce397db)">
                 <path style=" stroke:none;fill-rule:nonzero;fill:#4b555c;fill-opacity:1;"
@@ -1617,12 +1639,15 @@
                     d="M 359.316406 564.472656 L 384.519531 564.472656 L 384.519531 589.675781 L 359.316406 589.675781 Z M 359.316406 564.472656 " />
             </g>
         </g>
+
+        <!-- orange fog -->
         <g clip-rule="nonzero" clip-path="url(#5c8d38bcf9)">
             <g mask="url(#90f173f253)" transform="matrix(1,0,0,1,0,-0.000000000000058398)">
                 <g clip-path="url(#223cb696ef)">
                     <g clip-rule="nonzero" clip-path="url(#5cb4103d7f)">
                         <path style=" stroke:none;fill-rule:nonzero;fill:#df7633;fill-opacity:1;"
-                            d="M -21.019531 -1.226562 L 1024.9375 -1.226562 L 1024.9375 570.921875 L -21.019531 570.921875 Z M -21.019531 -1.226562 " />
+                            d="M -21.019531 -1.226562 L 1024.9375 -1.226562 L 1024.9375 570.921875 L -21.019531 570.921875 Z M
+        -21.019531 -1.226562 " />
                     </g>
                 </g>
                 <mask id="90f173f253">
