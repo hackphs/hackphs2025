@@ -55,7 +55,8 @@ const birdFly = [
     },
     {
         top: "90px",
-        right: "32%"
+        right: "32%",
+        display: "block"
     }
 ];
 
