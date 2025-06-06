@@ -218,7 +218,7 @@ h2 {
     margin-bottom: 0.5rem;
 }
 
-@media screen and (max-width:750px) {
+@media screen and (max-width:749px) {
     #outer {
         padding: 2rem 1rem 1rem 1rem;
     }
@@ -262,7 +262,10 @@ h2 {
 
     h2 {
         font-size: 7svh;
-        text-align: center;
+    }
+
+    :root {
+        font-size: calc(min(1rem, 4svh));
     }
 }
 
