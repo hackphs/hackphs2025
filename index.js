@@ -1,5 +1,3 @@
-
-
 const button = document.querySelector("button");
 const form = document.querySelector("form");
 const emailInp = document.querySelector("input");
@@ -10,26 +8,26 @@ button.addEventListener("click", e => {
     emailInp.checkValidity();
     if (!form.checkValidity() || emailInp.value == "") {
         if (emailInp.value == "") emailInp.setCustomValidity("Must enter an email");
+        if (emailInp.value.length > 100) emailInp.setCustomValidity("Email is too long");
         else emailInp.setCustomValidity("");
-        emailInp.reportValidity();
         form.reportValidity();
         return;
     }
-
-    // NOW SEND THE POST REQUEST
+    button.setAttribute("disabled", "");
     fetch("https://hackphs.pythonanywhere.com/", {
         method: "POST",
         body: JSON.stringify({ email: emailInp.value }),
-    }).then(data => console.log(data.text()));
+    }).then(data => data.text().then(text => {
+        setTimeout(button.removeAttribute.bind(button, "disabled"), 5000);
+        if (text == "E") return;
+        button.className = "notified";
+        emailInp.addEventListener("input", () => { button.className = "unnotified"; });
 
-    button.className = "notified";
-
-    addEventListener("input", () => { button.className = "unnotified"; });
-
-    if (emailInp.value == "storby@hackphs.tech") {
-        document.body.className = "sunset";
-        setTimeout(() => document.body.className = "night", 14500);
-    }
+        if (emailInp.value == "storby@hackphs.tech") {
+            document.body.className = "sunset";
+            setTimeout(() => document.body.className = "night", 14500);
+        }
+    }));
 });
 
 // om admits orz

@@ -116,12 +116,20 @@ input {
     flex-grow: 1;
 }
 
+button[disabled] {
+    background: #ccc5;
+}
+
 button:hover {
     cursor: pointer;
     background: #bbb5;
 }
 
-button:active {
+button:hover[disabled] {
+    cursor: not-allowed;
+}
+
+button:active:not([disabled]) {
     top: 0.1rem;
 }
 

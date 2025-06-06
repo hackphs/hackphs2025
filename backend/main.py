@@ -15,14 +15,13 @@ def add_registration():
     global emails
     try:
         email = request.get_json(force=True).get("email")
-
+        if len(email) > 100: return "L", 200
         if email in emails:
             return "L", 200, {"Access-Control-Allow-Origin": "*"} # L --> not added
         with open ("emails.json",'r') as f: emails = set(json.load(f))
         emails.add(email)
         with open ("emails.json",'w') as f: json.dump(list(emails),f)
-    except Exception as e:
-        return "E", 200, {"Access-Control-Allow-Origin": "*"}
+    except: return "E", 200, {"Access-Control-Allow-Origin": "*"}
     return "W", 200, {"Access-Control-Allow-Origin": "*"} # W --> added
 
 # OMFG IT WORKS 
