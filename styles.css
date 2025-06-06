@@ -1,14 +1,12 @@
-/* Jonathan write epic stuff here! */
-
 :root {
-    color: white;
-    font-family: "Figtree";
     font-size: 1rem;
     background: rgb(184 193 215);
 }
 
 * {
     transition: all 0.5s;
+    font-family: "Figtree", sans-serif;
+    color: white;
 }
 
 @property --grad-1 {
@@ -75,12 +73,13 @@ body.night {
     --grad-2: rgb(12, 24, 87);
 }
 
-
 #outer {
     display: flex;
     height: 100svh;
     padding: 2rem;
     box-sizing: border-box;
+    position: relative;
+    z-index: 2;
 }
 
 #container {
@@ -102,32 +101,31 @@ button {
     border: 1px #bbb solid;
     border-radius: 0.5rem;
     backdrop-filter: blur(1rem);
-    color: white;
+    -webkit-backdrop-filter: blur(1rem);
     position: relative;
     top: 0;
     transition: top 0.1s, all 0.2s;
 
-    font-family: "Figtree";
     padding: 0.5rem;
     font-size: 1rem;
 }
 
 input {
-    width: 10px;
+    width: 5ch;
     flex-grow: 1;
 }
 
 button[disabled] {
-    background: #ccc5;
+    background: #bbb5;
+
+    &:hover {
+        cursor: not-allowed;
+    }
 }
 
 button:hover {
     cursor: pointer;
-    background: #bbb5;
-}
-
-button:hover[disabled] {
-    cursor: not-allowed;
+    background: #ccc5;
 }
 
 button:active:not([disabled]) {
@@ -137,6 +135,7 @@ button:active:not([disabled]) {
 #email-add button {
     max-width: 12ch;
     min-width: 8ch;
+    height: 2.25rem;
 }
 
 input::placeholder {
@@ -147,19 +146,13 @@ input::placeholder {
 #container a {
     color: #cdf;
     text-decoration: none;
-    box-sizing: border-box;
 }
 
 #container a:hover {
     text-decoration: underline;
 }
 
-form {
-    margin-top: 0.5rem;
-}
-
 h3 {
-    font-size: 1.1rem;
     font-weight: 500;
 }
 
@@ -187,9 +180,7 @@ img#icon {
 
 h1 {
     font-size: 6rem;
-    margin: 0;
-    margin-top: 4rem;
-    margin-bottom: 1rem;
+    margin: 4rem 0 1rem 0;
 }
 
 h2 {
@@ -203,6 +194,7 @@ h2 {
 #desc {
     background: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(1rem);
+    -webkit-backdrop-filter: blur(1rem);
     border-radius: 1rem;
     padding: 1rem;
     max-width: 50ch;
@@ -232,18 +224,22 @@ h2 {
         padding: 0.5rem 1.5rem;
         background: rgba(0, 0, 0, 0.2);
         backdrop-filter: blur(1rem);
+        -webkit-backdrop-filter: blur(1rem);
     }
 
     h2 {
         font-size: 4vw;
         background: rgba(0, 0, 0, 0.2);
         backdrop-filter: blur(1rem);
+        -webkit-backdrop-filter: blur(1rem);
         padding: 1rem;
         border-radius: 10rem;
         margin-top: 1rem;
     }
 
     #container {
+        display: flex;
+        flex-direction: column;
         justify-items: center;
         width: 100%;
     }
@@ -275,7 +271,6 @@ h2 {
     z-index: 0;
     top: 0px;
     right: -200px;
-    display: none;
 }
 
 h1 {
@@ -308,7 +303,6 @@ h1 {
     }
 
     #container {
-        display: flex;
         flex-direction: column;
         justify-content: space-around;
         gap: 0.5rem;
@@ -325,4 +319,9 @@ h1 {
         padding: 0;
     }
 
+}
+
+button * {
+    padding: 0;
+    margin: 0;
 }

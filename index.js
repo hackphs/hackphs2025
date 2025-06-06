@@ -41,11 +41,10 @@ function sleep(ms) {
 
 /** @type {Keyframe[]} */
 const birdFly = [
-    { top: "0px", right: "-200px" },
+    { top: "0px", right: "-200px", display: "block" },
     {
         top: "30px",
         right: "33%",
-        display: "block",
         offset: 0.4
     },
     {
@@ -55,21 +54,23 @@ const birdFly = [
     },
     {
         top: "90px",
-        right: "32%",
-        display: "block"
+        right: "32%"
     }
 ];
 
 let flown = false;
 window.addEventListener("keydown", e => {
     lastPressed.push(e.key);
+    console.log(e);
     let n = lastPressed.length;
     if (n < 5) return;
     if (flown) return;
     const birdy = document.querySelector("#birdy");
 
     if (lastPressed[n - 1] == "c" && lastPressed[n - 2] == "x" && ((lastPressed[n - 3] == "ArrowDown" && lastPressed[n - 4] == "ArrowRight") || (lastPressed[n - 3] == "ArrowRight" && lastPressed[n - 4] == "ArrowDown")) && lastPressed[n - 5] == "c") {
+        console.log("fdashkjfaskj");
         flown = true;
+        birdy.style.display = "block";
         birdy.animate(birdFly, {
             duration: 3000,
             iterations: 1,
