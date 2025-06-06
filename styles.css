@@ -27,6 +27,7 @@ body {
     margin: 0;
     padding: 0;
     height: 100svh;
+    max-height: 100svh;
     overflow: hidden auto;
     background: linear-gradient(var(--grad-1), var(--grad-2));
     background-position: center;
