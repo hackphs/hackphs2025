@@ -82,7 +82,7 @@ window.addEventListener("keydown", e => {
             iterations: 1,
             fill: "forwards"
         });
-        sleep(2000).then(() => { document.querySelector("h1").style.setProperty("color", "rgba(62,151,192,255)"); });
+        sleep(2000).then(() => { document.querySelector("h1").classList.add("but-blue") });
     }
     if (n < 10) return;
 
