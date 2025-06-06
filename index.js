@@ -8,7 +8,7 @@ button.addEventListener("click", e => {
     emailInp.checkValidity();
     if (!form.checkValidity() || emailInp.value == "") {
         if (emailInp.value == "") emailInp.setCustomValidity("Must enter an email");
-        if (emailInp.value.length > 100) emailInp.setCustomValidity("Email is too long");
+        else if (emailInp.value.length > 100) emailInp.setCustomValidity("Email is too long");
         else emailInp.setCustomValidity("");
         form.reportValidity();
         return;
