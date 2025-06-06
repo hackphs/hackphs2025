@@ -71,10 +71,10 @@ window.addEventListener("keydown", e => {
     console.log(e);
     let n = lastPressed.length;
     if (n < 5) return;
-    if (flown) return;
     const birdy = document.querySelector("#birdy");
 
     if (lastPressed[n - 1] == "c" && lastPressed[n - 2] == "x" && ((lastPressed[n - 3] == "ArrowDown" && lastPressed[n - 4] == "ArrowRight") || (lastPressed[n - 3] == "ArrowRight" && lastPressed[n - 4] == "ArrowDown")) && lastPressed[n - 5] == "c") {
+        if (flown) return;
         flown = true;
         birdy.style.display = "block";
         birdy.animate(birdFly, {
