@@ -278,8 +278,11 @@ h1 {
     position: relative;
 }
 
-#icon-mobile {
-    display: none;
+
+@media screen and (min-width:500px) {
+    #icon-mobile {
+        display: none;
+    }
 }
 
 @media screen and (max-width:500px) {
