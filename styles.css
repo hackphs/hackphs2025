@@ -218,7 +218,7 @@ h2 {
     margin-bottom: 0.5rem;
 }
 
-@media screen and (max-width:749px) {
+@media screen and (max-width:749px) and (max-aspect-ratio:1.5) {
     #outer {
         padding: 2rem 1rem 1rem 1rem;
     }
@@ -249,7 +249,7 @@ h2 {
     }
 }
 
-@media screen and (max-height:650px) and (min-width:750px) {
+@media screen and (max-height:650px) and (min-aspect-ratio:1.5) {
     img#icon {
         width: 4rem;
     }
