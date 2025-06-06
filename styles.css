@@ -12,25 +12,26 @@
 @property --grad-1 {
     syntax: '<color>';
     initial-value: rgb(184 193 215);
-    inherits: false;
+    inherits: true;
 }
 
 @property --grad-2 {
     syntax: '<color>';
     initial-value: rgb(247 177 176);
-    inherits: false;
+    inherits: true;
 }
 
 body {
+    --grad-1: rgb(184 193 215);
+    --grad-2: rgb(247 177 176);
     margin: 0;
     padding: 0;
     height: 100svh;
     max-height: 100svh;
     overflow: hidden auto;
-    background: linear-gradient(var(--grad-1), var(--grad-2));
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    background: center/cover linear-gradient(var(--grad-1) 0%, var(--grad-2) 100%) no-repeat;
+
+    position: relative;
     transition-timing-function: linear;
 
     transition: --grad-1 15s, --grad-2 15s;
@@ -47,12 +48,19 @@ body::before {
     right: 0;
 
     background-image: url("static/mountain.svg");
+
     background-repeat: no-repeat;
-    background-position: 52% 50%;
+    background-position: center;
     background-size: cover;
     filter: hue-rotate(360deg);
 
     transition: filter 15s;
+}
+
+@media screen and (min-aspect-ratio:16/9) {
+    body::before {
+        background-size: 101%;
+    }
 }
 
 body.sunset::before {
