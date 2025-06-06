@@ -27,7 +27,7 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
-    overflow-x: hidden;
+    overflow: hidden auto;
     background: linear-gradient(var(--grad-1), var(--grad-2));
     background-position: center;
     background-size: cover;
@@ -270,6 +270,7 @@ h2 {
     z-index: 0;
     top: 0px;
     right: -200px;
+    display: none;
 }
 
 h1 {
