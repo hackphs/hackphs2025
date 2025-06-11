@@ -6,14 +6,25 @@ from flask import Flask, request, make_response
 app = Flask(__name__)
 
 emails = set()
+ips = dict()
 
 if not os.path.exists("emails.json"):
     with open ("emails.json",'w') as f: f.write("[]")
-
+if not os.path.exists("ips.json"):
+    with open("ips.json",'w') as f: f.write("{}")
 @app.route("/",methods=["POST"])
 def add_registration():
     global emails
     try:
+        data = request.remote_addr
+        
+        # horrendus ddos protection
+        if data in ips:
+            ips[data] += 1
+            if ips[data] > 200: return "wtf bro", 200
+        else: ips[data] = 1
+        with open("ips.json",'w') as f: json.dump(ips,f)
+
         email = request.get_json(force=True).get("email")
         if len(email) > 100: return "L", 200
         if email in emails:
