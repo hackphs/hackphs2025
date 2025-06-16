@@ -110,7 +110,7 @@ document.querySelectorAll(".checkbox").forEach(el => { el.innerHTML = `<div clas
 
 document.querySelector("#submit-dialog").addEventListener("click", () => {
     let res = [emailInp.value,];
-    document.querySelector("#visit-form").forEach(el => {
+    document.querySelectorAll("#visit-form div").forEach(el => {
         if (el.classList.contains("checked")) res.push(el.id);
     });
 
