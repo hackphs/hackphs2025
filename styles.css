@@ -365,6 +365,10 @@ dialog {
         border: 1px solid white;
     }
 
+    #faqs {
+        width: calc(100vw - 4rem);
+    }
+
     dialog::backdrop {
         backdrop-filter: blur(5px);
         -webkit-backdrop-filter: blur(5px);
@@ -402,11 +406,15 @@ dialog button.close {
     border-radius: 1.25rem;
     position: absolute;
     z-index: 3;
-    top: 2rem;
-    right: 2rem;
+    top: 1.5rem;
+    right: 1.5rem;
 
     &:active {
-        top: 2.1rem;
+        top: 1.6rem;
+    }
+
+    &:hover {
+        background: #ccc5;
     }
 }
 
@@ -515,4 +523,108 @@ dialog:not([open]) {
 
 dialog[open] {
     opacity: 1;
+}
+
+footer {
+    display: block;
+    position: absolute;
+    bottom: 0.5rem;
+    left: 0.5rem;
+}
+
+footer p {
+    margin: 0;
+    color: rgb(55, 33, 29);
+    font-style: italic;
+    font-weight: 200;
+}
+
+#faq-button {
+    position: fixed;
+    box-sizing: border-box;
+    top: unset;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    transition: gap .5s;
+    height: 2rem;
+    aspect-ratio: 1;
+}
+
+#faq-button span {
+    width: 0;
+    overflow: hidden;
+    transition: width .5s;
+}
+
+#faq-button:hover {
+    gap: 0.5rem;
+}
+
+#faq-button:hover span {
+    width: 4.2ch;
+}
+
+#faq-button:active {
+    bottom: 0.4rem;
+}
+
+#faqs details:first-of-type {
+    border-top: 1px solid white;
+}
+
+details {
+    border-bottom: solid white 1px;
+    border-left: solid white 1px;
+    border-right: solid white 1px;
+    background-color: #0002;
+}
+
+details summary {
+    display: block;
+    transition: all 0.2s, border-bottom 0s;
+    background: #0005;
+}
+
+details[open] summary {
+    border-bottom: 1px solid white;
+    background: #6665;
+}
+
+details summary:hover {
+    background: #ccc5;
+}
+
+details * {
+    padding: 0.5rem;
+    box-sizing: border-box;
+}
+
+details summary:hover {
+    cursor: pointer;
+}
+
+#faqs details:first-of-type {
+    border-radius: .5rem .5rem 0 0;
+}
+
+#faqs details:first-of-type summary {
+    border-radius: .5rem .5rem 0 0;
+}
+
+#faqs details:last-of-type {
+    border-radius: 0 0 .5rem .5rem;
+}
+
+#faqs details:last-of-type:not([open]) summary {
+    border-radius: 0 0 .5rem .5rem;
+}
+
+#faqs h1 {
+    margin-bottom: 2rem;
 }

@@ -45,6 +45,13 @@
     </div>
 
     <img src="static/image2.png" id="birdy" />
+
+    <button id="faq-button" onclick="faqs.showModal();"><i class="fa-solid fa-question"></i>
+        <span>FAQs</span>
+    </button>
+    <footer>
+        <p>©hackPHS 2025</p>
+    </footer>
     <dialog id="howvisit">
         <!-- <button class="close fa-solid fa-x" onclick="howvisit.close()"></button> -->
         <h1>How'd you hear about us?</h1>
@@ -88,6 +95,90 @@
             </div>
         </div>
         <button id="submit-dialog">Submit</button>
+    </dialog>
+
+    <dialog id="faqs">
+        <button class="close fa-solid fa-x" onclick="faqs.close()"></button>
+        <h1>FAQs</h1>
+
+        <details>
+            <summary>Who can attend this event?</summary>
+            <p>Unfortunately, this event is for high school students only. If you are no longer a high schooler and
+                would like to help
+                out, consider becoming a mentor. Email us at team@hackphs.tech for more info on this!
+            </p>
+        </details>
+        <details>
+            <summary>How do I apply?</summary>
+            <p>Applications for 2025 are not open yet. Join the mailing list to be reminded when they do!
+            </p>
+        </details>
+        <details>
+            <summary>How do I become a mentor? Chaperone? Volunteer?</summary>
+            <p>Email us!</p>
+        </details>
+        <details>
+            <summary>What will be provided during the event?</summary>
+            <p>Free food and drinks will be provided during the hackathon, including options for people with dietary
+                restrcitions. If you ever want to sleep during the hackathon, we'll have dedicated quiet sleeping areas
+                for y'all to catch some Z's.
+                Electrical outlets will also be available throughout the cafeteria for all your charging needs. This
+                year we will not be providing a hardware lab, so make sure to bring any hardware you want to use for
+                your project.
+            </p>
+        </details>
+        <details>
+            <summary>What should I bring?</summary>
+            <p>Make sure you’re ready to spend 24 hours away from home. Basically, bring a sleeping bag, extra clothes,
+                a toothbrush,
+                and anything else you might need to feel comfortable for a long period of time. Also, please bring
+                anything you need for
+                your project such as a laptop, laptop charger, and hardware.
+            </p>
+        </details>
+        <details>
+            <summary>How do I form a team?</summary>
+            <p>Teams of up to 4 people are encouraged (though not mandatory) - if you already have a team, you can form
+                your team when
+                registering for hackPHS, but teams won't be final until submissions. If you don't have a team before the
+                event, don't
+                worry! At the beginning of the event, there will be a team building workshop, which will be a great way
+                to meet other
+                enthusiastic people and even make new friends.
+            </p>
+        </details>
+        <details>
+            <summary>Do you have a Code of Conduct?</summary>
+            <p>All hackers must abide by Major League Hacking's Code of Conduct. TL;DR - all hackers should respect one
+                another.
+                Hackers also must abide by Princeton High School rules while on PHS grounds.
+            </p>
+        </details>
+        <details>
+            <summary>What can I win?</summary>
+            <p>hackPHS hopes to emphasize learning and collaboration more so than competition - nonetheless, there will
+                be awesome
+                prizes to be won for some of the best hacks made during the event! The full prize list will be released
+                later - make
+                sure to follow us on social media to find out when!
+            </p>
+        </details>
+        <details>
+            <summary>What can I learn?</summary>
+            <p>While you can learn a great deal in the process of building an ambitious project in such a limited time
+                frame, we also
+                plan to offer many introductory workshops (around 1 hour each) during the event, for those new to
+                software and/or
+                hardware engineering. Specific topics will include Python, Web Development, and Circutry, among many
+                others - check our
+                schedule for the full list!
+            </p>
+        </details>
+        <details>
+            <summary>My question isn't answered here!</summary>
+            <p>
+            </p>
+        </details>
     </dialog>
 </body>
 
