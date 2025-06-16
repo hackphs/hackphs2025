@@ -118,8 +118,6 @@ document.querySelector("#submit-dialog").addEventListener("click", () => {
         method: "POST",
         body: JSON.stringify(res)
     }).then(
-        () => {
-            document.querySelector("#submit-dialog").close()
-        }
+        () => howvisit.close()
     );
 });
