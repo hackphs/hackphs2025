@@ -117,5 +117,9 @@ document.querySelector("#submit-dialog").addEventListener("click", () => {
     fetch("https://hackphs.pythonanywhere.com/", {
         method: "POST",
         body: JSON.stringify(res)
-    }).then(data => data.text()).then(text => console.log(text));
+    }).then(
+        () => {
+            document.querySelector("#submit-dialog").close()
+        }
+    );
 });
