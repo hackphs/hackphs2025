@@ -348,7 +348,7 @@ button * {
 
 
 
-dialog[open] {
+dialog {
     background-color: #0005;
     backdrop-filter: blur(10px);
     padding: 1rem;
@@ -357,21 +357,23 @@ dialog[open] {
 }
 
 @media screen and (min-width:501px) and (min-height:401px) {
-    dialog[open] {
+    dialog {
         min-width: calc(min(max(50%, 80ch), 100vw - 4rem));
         max-width: calc(100vw - 4rem);
         max-height: calc(100vh - 4rem);
         border-radius: 1rem;
+        border: 1px solid white;
     }
 
     dialog::backdrop {
         backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
     }
 }
 
 @media screen and (max-width:500px),
 (max-height:400px) {
-    dialog[open] {
+    dialog {
         border: none;
         margin: 0;
         position: fixed;
@@ -417,7 +419,8 @@ div.checkbox {
     display: inline-flex;
     border-radius: 0.25rem;
 
-    background-color: #000d;
+    background-color: #0003;
+    backdrop-filter: blur(10px);
     border: 1px white solid;
     overflow: hidden;
 
@@ -425,6 +428,9 @@ div.checkbox {
     justify-content: center;
 
     position: relative;
+    top: 0;
+
+    transition: top 0.04s;
 }
 
 div.checker {
@@ -469,10 +475,44 @@ div.checker.checked div.checkbox-inner {
     transform: rotateZ(0deg);
 }
 
-div.checker:active div.checkbox {
+div.checker:active:not(#other) div.checkbox,
+#other div.checkbox:active {
     top: 0.1rem;
 }
 
 #visit-form {
     user-select: none;
+}
+
+dialog[open] input {
+    width: calc(min(100%, 30ch));
+    font-size: 1.25rem;
+    padding: .25rem;
+}
+
+dialog[open] button,
+dialog[open] input {
+    background: #0003;
+}
+
+dialog {
+    opacity: 0;
+    transition: all .5s;
+}
+
+dialog:not([open]) {
+    display: block;
+    max-width: 0;
+    max-height: 0;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -100;
+}
+
+dialog[open] {
+    opacity: 1;
 }
