@@ -14,6 +14,9 @@ button.addEventListener("click", e => {
         return;
     }
     button.setAttribute("disabled", "");
+
+    document.querySelector("#howvisit").showModal();
+
     fetch("https://hackphs.pythonanywhere.com/", {
         method: "POST",
         body: JSON.stringify({ email: emailInp.value }),
@@ -94,4 +97,25 @@ window.addEventListener("keydown", e => {
             { transform: "rotate(360deg)" }
         ], { duration: 2000 }));
     }
+});
+
+document.querySelectorAll(".checker").forEach(el => {
+    el.addEventListener("click", () => {
+        if (el.classList.contains("checked")) el.classList.remove("checked");
+        else el.classList.add("checked");
+    })
+});
+
+document.querySelectorAll(".checkbox").forEach(el => { el.innerHTML = `<div class="checkbox-inner fa-solid fa-check"></div>` });
+
+document.querySelector("#submit-dialog").addEventListener("click", () => {
+    let res = [emailInp.value,];
+    document.querySelector("#visit-form").forEach(el => {
+        if (el.classList.contains("checked")) res.push(el.id);
+    });
+
+    fetch("https://hackphs.pythonanywhere.com/", {
+        method: "POST",
+        body: JSON.stringify(res)
+    }).then(data => data.text()).then(text => console.log(text));
 });

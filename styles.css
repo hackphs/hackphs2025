@@ -118,7 +118,7 @@ button {
     font-size: 1rem;
 }
 
-input {
+#container input {
     width: 5ch;
     flex-grow: 1;
 }
@@ -186,12 +186,12 @@ img#icon {
     margin: 1rem;
 }
 
-h1 {
+#container h1 {
     font-size: 6rem;
     margin: 4rem 0 1rem 0;
 }
 
-h2 {
+#container h2 {
     font-size: 2.5rem;
     font-style: italic;
     font-weight: 200;
@@ -218,7 +218,7 @@ h2 {
     margin-bottom: 0.5rem;
 }
 
-h1.but-blue {
+#container h1.but-blue {
     color: rgb(62, 151, 192);
 }
 
@@ -227,7 +227,7 @@ h1.but-blue {
         padding: 2rem 1rem 1rem 1rem;
     }
 
-    h1 {
+    #container h1 {
         font-size: 10vw;
         text-align: center;
         margin-top: 6rem;
@@ -239,11 +239,11 @@ h1.but-blue {
         -webkit-backdrop-filter: blur(1rem);
     }
 
-    h1.but-blue {
+    #container h1.but-blue {
         color: #5ac7fa;
     }
 
-    h2 {
+    #container h2 {
         font-size: 4vw;
         background: rgba(0, 0, 0, 0.2);
         backdrop-filter: blur(1rem);
@@ -344,4 +344,135 @@ h1 {
 button * {
     padding: 0;
     margin: 0;
+}
+
+
+
+dialog[open] {
+    background-color: #0005;
+    backdrop-filter: blur(10px);
+    padding: 1rem;
+    box-sizing: border-box;
+
+}
+
+@media screen and (min-width:501px) and (min-height:401px) {
+    dialog[open] {
+        min-width: calc(min(max(50%, 80ch), 100vw - 4rem));
+        max-width: calc(100vw - 4rem);
+        max-height: calc(100vh - 4rem);
+        border-radius: 1rem;
+    }
+
+    dialog::backdrop {
+        backdrop-filter: blur(5px);
+    }
+}
+
+@media screen and (max-width:500px),
+(max-height:400px) {
+    dialog[open] {
+        border: none;
+        margin: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        box-sizing: border-box;
+        min-width: 100vw;
+        min-height: 100svh;
+        padding: 1.5rem;
+    }
+
+
+}
+
+dialog h1 {
+    margin: 0;
+    font-size: 3rem;
+    text-align: center;
+}
+
+dialog button.close {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 1.25rem;
+    position: absolute;
+    z-index: 3;
+    top: 2rem;
+    right: 2rem;
+
+    &:active {
+        top: 2.1rem;
+    }
+}
+
+div.checkbox {
+    width: 1.25rem;
+    height: 1.25rem;
+    min-width: 1.25rem;
+    min-height: 1.25rem;
+
+    display: inline-flex;
+    border-radius: 0.25rem;
+
+    background-color: #000d;
+    border: 1px white solid;
+    overflow: hidden;
+
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+div.checker {
+    margin: 0.75rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+div.checker:hover div.checkbox {
+    background-color: #666d;
+}
+
+div.checkbox-inner {
+    display: flex;
+    background-color: #3a7acf;
+    width: 0;
+    height: 0;
+    transition: width .2s, height .2s, transform .2s;
+    font: "Figtree";
+    font-size: 1rem;
+    font-weight: 900;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    border-radius: 0.5rem;
+    transform: rotateZ(-90deg);
+    transform-origin: center;
+
+    box-sizing: border-box;
+}
+
+div.checker.checked div.checkbox-inner {
+    width: 2rem;
+    height: 2rem;
+    transform: rotateZ(0deg);
+}
+
+div.checker:active div.checkbox {
+    top: 0.1rem;
+}
+
+#visit-form {
+    user-select: none;
 }
