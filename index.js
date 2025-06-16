@@ -118,7 +118,7 @@ document.querySelector("#submit-dialog").addEventListener("click", () => {
     let res = [emailInp.value,];
     document.querySelectorAll("#visit-form div").forEach(el => {
         if (el.id != "other" && el.classList.contains("checked")) res.push(el.id);
-        if (el.id == "other" && el.classList.contains("checked")) res.push("OTHER/" + el.value);
+        if (el.id == "other" && el.classList.contains("checked")) res.push("OTHER/" + el.querySelector("input").value);
     });
 
     fetch("https://hackphs.pythonanywhere.com/", {
