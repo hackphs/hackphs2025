@@ -46,14 +46,27 @@
 
     <img src="static/image2.png" id="birdy" />
 
-    <button id="faq-button" onclick="faqs.showModal();"><i class="fa-solid fa-question"></i>
-        <span>FAQs</span>
-    </button>
+    <!-- Bottom right corner buttons -->
+    <div id="buttons">
+        <!-- Button for schedule -->
+        <button class="section-button" id="schedule-button" onclick="schedule.showModal();"><i
+                class="fa-solid fa-calendar"></i>
+            <span>Schedule</span>
+        </button>
+        <!-- Button for FAQs -->
+        <button class="section-button" id="faq-button" onclick="faqs.showModal();"><i class="fa-solid fa-question"></i>
+            <span>FAQs</span>
+        </button>
+    </div>
     <footer>
         <p>©hackPHS 2025</p>
     </footer>
+
+    <!-- Marketing team popup -->
     <dialog id="howvisit">
         <!-- <button class="close fa-solid fa-x" onclick="howvisit.close()"></button> -->
+        <!-- ^^ No close because we're toxic like that -->
+
         <h1>How'd you hear about us?</h1>
 
         <div id="visit-form">
@@ -97,7 +110,8 @@
         <button id="submit-dialog">Submit</button>
     </dialog>
 
-    <dialog id="faqs">
+    <!-- FAQs popup -->
+    <dialog id="faqs" class="popup">
         <button class="close fa-solid fa-x" onclick="faqs.close()"></button>
         <h1>FAQs</h1>
 
@@ -179,6 +193,175 @@
             <p>
             </p>
         </details>
+    </dialog>
+
+    <!-- Schedule popup -->
+    <dialog id="schedule" class="popup">
+        <button class="close fa-solid fa-x" onclick="schedule.close()"></button>
+        <h1>Schedule</h1>
+        <i>All scheduling details are <b>very tentative</b> as of right now: rooms, times, people and dates are subject
+            to change at <b>any point.</b></i>
+        <table>
+            <thead>
+                <tr>
+                    <td>Time</td>
+                    <td>Event</td>
+                    <td>Location</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>9:00AM</td>
+                    <td>Check in opens</td>
+                    <td>Cafeteria</td>
+                </tr>
+                <tr>
+                    <td>9:30AM</td>
+                    <td>Mini Programming Competition</td>
+                    <td>Cafeteria</td>
+                </tr>
+                <tr>
+                    <td>11:00AM</td>
+                    <td>Opening Ceremony</td>
+                    <td>Cafeteria</td>
+                </tr>
+                <tr>
+                    <td>12:00PM</td>
+                    <td>Hacking Starts</td>
+                    <td>Cafeteria</td>
+                </tr>
+                <tr>
+                    <td>12:00PM</td>
+                    <td>Team Building Workshop</td>
+                    <td>152</td>
+                </tr>
+                <tr>
+                    <td>1:00PM</td>
+                    <td>Lunch</td>
+                    <td>Cafeteria</td>
+                </tr>
+                <tr>
+                    <td>2:00PM</td>
+                    <td>Intro to Python</td>
+                    <td>155</td>
+                </tr>
+                <tr>
+                    <td>3:00PM</td>
+                    <td>Intro to Java</td>
+                    <td>153</td>
+                </tr>
+                <tr>
+                    <td>4:00PM</td>
+                    <td>Beginner's Challenge</td>
+                    <td>152</td>
+                </tr>
+                <tr>
+                    <td>4:00PM</td>
+                    <td>Sponsor Challenge</td>
+                    <td>153</td>
+                </tr>
+                <tr>
+                    <td>4:30PM</td>
+                    <td>Intro to Circuitry</td>
+                    <td>155</td>
+                </tr>
+                <tr>
+                    <td>5:30PM</td>
+                    <td>Intro to Finance in Computer Science</td>
+                    <td>155</td>
+                </tr>
+                <tr>
+                    <td>6:30PM</td>
+                    <td>Dinner</td>
+                    <td>Cafeteria</td>
+                </tr>
+                <tr>
+                    <td>7:00PM</td>
+                    <td>Photo Booth Opens</td>
+                    <td>Cafeteria</td>
+                </tr>
+                <tr>
+                    <td>7:30PM</td>
+                    <td>3D Design and Printing</td>
+                    <td>153</td>
+                </tr>
+                <tr>
+                    <td>7:30PM</td>
+                    <td>Sponsor Event</td>
+                    <td>155</td>
+                </tr>
+                <tr>
+                    <td>8:00PM</td>
+                    <td>Intro to Neural Networks</td>
+                    <td>153</td>
+                </tr>
+                <tr>
+                    <td>9:00PM</td>
+                    <td>Intro to Web Development</td>
+                    <td>153</td>
+                </tr>
+                <tr>
+                    <td>9:30PM</td>
+                    <td>MLH Mini-event</td>
+                    <td>152</td>
+                </tr>
+                <tr>
+                    <td>10:00PM</td>
+                    <td>Spikeball, Volleyball, Badminton</td>
+                    <td>New Gym</td>
+                </tr>
+                <tr>
+                    <td>11:00PM</td>
+                    <td>Chess Tournament</td>
+                    <td>153</td>
+                </tr>
+                <tr>
+                    <td>11:00PM</td>
+                    <td>Intro to Computational Mathemagics</td>
+                    <td>155</td>
+                </tr>
+                <tr>
+                    <td>12:00AM</td>
+                    <td>Midnight Snack</td>
+                    <td>Cafeteria</td>
+                </tr>
+                <tr>
+                    <td>12:00AM</td>
+                    <td>Karaoke + Games</td>
+                    <td>153</td>
+                </tr>
+                <tr>
+                    <td>7:30AM</td>
+                    <td>Breakfast</td>
+                    <td>Cafeteria</td>
+                </tr>
+                <tr>
+                    <td>9:00AM</td>
+                    <td>Submissions Close, Hacking Ends</td>
+                    <td>--</td>
+                </tr>
+                <tr>
+                    <td>9:00AM</td>
+                    <td>Spikeball</td>
+                    <td>New Gym</td>
+                </tr>
+                <tr>
+                    <td>9:30AM</td>
+                    <td>Engineering Challenge</td>
+                    <td>152</td>
+                </tr>
+                <tr>
+                    <td>9:30AM</td>
+                    <td>Judging Begins</td>
+                    <td>--</td>
+                </tr>
+                <tr>
+                    <td>11:30AM</td>
+                    <td>Closing Ceremony</td>
+                    <td>PAC</td>
+                </tr>
+            </tbody>
+        </table>
     </dialog>
 </body>
 

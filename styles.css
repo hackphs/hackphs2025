@@ -539,12 +539,20 @@ footer p {
     font-weight: 200;
 }
 
-#faq-button {
+#buttons {
+    display: flex;
     position: fixed;
     box-sizing: border-box;
     top: unset;
     bottom: 0.5rem;
     right: 0.5rem;
+    z-index: 2;
+    flex-direction: row;
+    gap: .5rem;
+}
+
+.section-button {
+    box-sizing: border-box;
     z-index: 2;
     display: flex;
     flex-direction: row;
@@ -556,13 +564,13 @@ footer p {
     aspect-ratio: 1;
 }
 
-#faq-button span {
+.section-button span {
     width: 0;
     overflow: hidden;
     transition: width .5s;
 }
 
-#faq-button:hover {
+.section-button:hover {
     gap: 0.5rem;
 }
 
@@ -570,11 +578,15 @@ footer p {
     width: 4.2ch;
 }
 
-#faq-button:active {
+#schedule-button:hover span {
+    width: 7ch;
+}
+
+.section-button:active {
     bottom: 0.4rem;
 }
 
-#faqs details:first-of-type {
+.popup details:first-of-type {
     border-top: 1px solid white;
 }
 
@@ -609,22 +621,40 @@ details summary:hover {
     cursor: pointer;
 }
 
-#faqs details:first-of-type {
+.popup details:first-of-type {
     border-radius: .5rem .5rem 0 0;
 }
 
-#faqs details:first-of-type summary {
+.popup details:first-of-type summary {
     border-radius: .5rem .5rem 0 0;
 }
 
-#faqs details:last-of-type {
+.popup details:last-of-type {
     border-radius: 0 0 .5rem .5rem;
 }
 
-#faqs details:last-of-type:not([open]) summary {
+.popup details:last-of-type:not([open]) summary {
     border-radius: 0 0 .5rem .5rem;
 }
 
-#faqs h1 {
+.popup h1 {
     margin-bottom: 2rem;
+}
+
+table {
+    border: 1px solid white;
+    width: 100%;
+    margin-top: 1rem;
+    border-spacing: 0;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+thead td {
+    background-color: #000a;
+    border-bottom: 1px solid white;
+}
+
+td {
+    padding: 0.5rem;
 }
