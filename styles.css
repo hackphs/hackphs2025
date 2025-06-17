@@ -160,11 +160,11 @@ input::placeholder {
     text-decoration: underline;
 }
 
-h3 {
+#container h3 {
     font-weight: 500;
 }
 
-i.fa-check {
+#container i.fa-check {
     color: rgb(115, 255, 115);
 }
 
@@ -266,13 +266,13 @@ img#icon {
         width: 4rem;
     }
 
-    h1 {
+    #container h1 {
         margin-top: 2rem;
         margin-bottom: 0;
         font-size: 14svh;
     }
 
-    h2 {
+    #container h2 {
         font-size: 7svh;
     }
 
@@ -290,7 +290,7 @@ img#icon {
     right: -200px;
 }
 
-h1 {
+#container h1 {
     z-index: 2;
     position: relative;
 }
@@ -304,7 +304,7 @@ h1 {
         display: none;
     }
 
-    h1 {
+    #container h1 {
         margin: 0;
     }
 }
