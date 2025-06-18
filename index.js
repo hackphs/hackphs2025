@@ -127,4 +127,12 @@ document.querySelector("#submit-dialog").addEventListener("click", () => {
     }).then(() => howvisit.close());
 });
 
-document.querySelector("dialog").addEventListener("close", () => { window.onbeforeunload = null });
+document.querySelectorAll("dialog").forEach(el => el.addEventListener("close", () => {
+    window.onbeforeunload = null;
+    window.location.hash = '';
+}));
+
+if (window.location.hash != '') {
+    try { document.querySelector(window.location.hash).showModal(); }
+    catch (e) { }
+}

@@ -530,6 +530,7 @@ footer {
     position: absolute;
     bottom: 0.5rem;
     left: 0.5rem;
+    z-index: 2;
 }
 
 footer p {
@@ -641,20 +642,44 @@ details summary:hover {
     margin-bottom: 2rem;
 }
 
+.popup {
+    font-size: 1.25rem;
+}
+
 table {
     border: 1px solid white;
     width: 100%;
     margin-top: 1rem;
     border-spacing: 0;
-    border-radius: 0.5rem;
+    border-radius: .5rem;
     overflow: hidden;
 }
 
 thead td {
-    background-color: #000a;
+    background-color: #111c;
     border-bottom: 1px solid white;
 }
 
 td {
-    padding: 0.5rem;
+    padding: .5rem;
+}
+
+tbody td {
+    background-color: #222a;
+}
+
+tbody tr:nth-child(2n) td {
+    background-color: #333a;
+}
+
+tr td:nth-child(1) {
+    width: 8ch;
+}
+
+dialog details a {
+    padding: 0;
+}
+
+dialog details a:hover {
+    color: #458eef;
 }

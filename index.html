@@ -49,12 +49,13 @@
     <!-- Bottom right corner buttons -->
     <div id="buttons">
         <!-- Button for schedule -->
-        <button class="section-button" id="schedule-button" onclick="schedule.showModal();"><i
-                class="fa-solid fa-calendar"></i>
+        <button class="section-button" id="schedule-button"
+            onclick="schedule.showModal(); window.location.hash='schedule';"><i class="fa-solid fa-calendar"></i>
             <span>Schedule</span>
         </button>
         <!-- Button for FAQs -->
-        <button class="section-button" id="faq-button" onclick="faqs.showModal();"><i class="fa-solid fa-question"></i>
+        <button class="section-button" id="faq-button" onclick="faqs.showModal(); window.location.hash='faqs';"><i
+                class="fa-solid fa-question"></i>
             <span>FAQs</span>
         </button>
     </div>
@@ -112,14 +113,34 @@
 
     <!-- FAQs popup -->
     <dialog id="faqs" class="popup">
-        <button class="close fa-solid fa-x" onclick="faqs.close()"></button>
+        <button class="close fa-solid fa-x" onclick="faqs.close();"></button>
         <h1>FAQs</h1>
 
+        <details>
+            <summary>When and Where is hackPHS?</summary>
+            <p>
+                hackPHS will be held in the cafeteria of Princeton High School, located at <a
+                    href="https://goo.gl/maps/kkXeczMvXWr" target="_blank">151 Moore St, Princeton, NJ</a>. Limited
+                parking will be available around the school. All times are tentative, but you should plan on arriving
+                around 9:00 AM on Saturday, November 1st and leaving sometime after 11:30 PM on Sunday, November 2nd.
+            </p>
+        </details>
+        <details>
+            <summary>What is a hackathon?</summary>
+            <p>Hackathons are where creative and enthusiastic people come together to build awesome projects in a single
+                all-nighter. With awesome workshops and incredible prizes, hackers will learn about new tech, build
+                innovative solutions to real-world problems, and share their creation with the community, all in one
+                event. If you are looking for a competition, a place to meet fellow hackers, or even just a place to
+                learn how to code, hackathons are for you. If you want to learn more, see the <a
+                    href="https://mlh.io/faq/" target="_blank">MLH Hackathon FAQ</a>.
+            </p>
+        </details>
         <details>
             <summary>Who can attend this event?</summary>
             <p>Unfortunately, this event is for high school students only. If you are no longer a high schooler and
                 would like to help
-                out, consider becoming a mentor. Email us at team@hackphs.tech for more info on this!
+                out, consider becoming a mentor. Email us at <a
+                    href="mailto:phshackathon@gmail.com">phshackathon@gmail.com</a> for more info on this!
             </p>
         </details>
         <details>
@@ -129,7 +150,7 @@
         </details>
         <details>
             <summary>How do I become a mentor? Chaperone? Volunteer?</summary>
-            <p>Email us!</p>
+            <p>Email us at <a href="mailto:phshackathon@gmail.com">phshackathon@gmail.com</a> for more info on this!</p>
         </details>
         <details>
             <summary>What will be provided during the event?</summary>
@@ -163,7 +184,8 @@
         </details>
         <details>
             <summary>Do you have a Code of Conduct?</summary>
-            <p>All hackers must abide by Major League Hacking's Code of Conduct. TL;DR - all hackers should respect one
+            <p>All hackers must abide by <a href="https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md"
+                    target="_blank">Major League Hacking's Code of Conduct.</a> TL;DR - all hackers should respect one
                 another.
                 Hackers also must abide by Princeton High School rules while on PHS grounds.
             </p>
@@ -197,10 +219,11 @@
 
     <!-- Schedule popup -->
     <dialog id="schedule" class="popup">
-        <button class="close fa-solid fa-x" onclick="schedule.close()"></button>
+        <button class="close fa-solid fa-x" onclick="schedule.close();"></button>
         <h1>Schedule</h1>
         <i>All scheduling details are <b>very tentative</b> as of right now: rooms, times, people and dates are subject
             to change at <b>any point.</b></i>
+        <h2>Saturday 11/1</h2>
         <table>
             <thead>
                 <tr>
@@ -320,6 +343,18 @@
                     <td>Intro to Computational Mathemagics</td>
                     <td>155</td>
                 </tr>
+        </table>
+
+        <h2>Sunday 11/2</h2>
+        <table>
+            <thead>
+                <tr>
+                    <td>Time</td>
+                    <td>Event</td>
+                    <td>Location</td>
+                </tr>
+            </thead>
+            <tbody>
                 <tr>
                     <td>12:00AM</td>
                     <td>Midnight Snack</td>
