@@ -17,11 +17,12 @@ if not os.path.exists("marketing.json"):
     with open("marketing.json",'w') as f: f.write("{}")
 @app.route("/",methods=["POST"])
 def add_registration():
-    global emails
+    global emails, marketing, ips
     try:
         data = request.remote_addr
         
         # horrendus ddos protection
+        with open("ips.json",'r') as f: ips=json.load(f)
         if data in ips:
             ips[data] += 1
             if ips[data] > 200: return "wtf bro", 200
@@ -29,6 +30,8 @@ def add_registration():
         with open("ips.json",'w') as f: json.dump(ips,f)
 
         jason:"dict[str,str]|list[str]" = request.get_json(force=True)
+
+        with open("marketing.json",'r') as f: marketing=json.load(f)
 
         if isinstance(jason,list):
             if len(jason) <= 1: return "L",200,{"Access-Control-Allow-Origin":"*"}
