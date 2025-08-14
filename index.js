@@ -23,7 +23,7 @@ addEventListener("DOMContentLoaded", () => {
 const sectionBgs = new Map([ // x, y, zoom -- x, y is center
     // [null, [0, 0, 1]],
     ["bg-1", [0, 0, 4]],
-    ["bg-2", [-10, -50, 4]], // x and y are -50 to 50 OR 0 to 100 OR -1 to 1 OR 0 to 1 OR -100 to 100 ?
+    ["bg-2", [-10, -500, 4]], // x and y are -50 to 50 OR 0 to 100 OR -1 to 1 OR 0 to 1 OR -100 to 100 ?
     ["bg-3", [0, 0, 1]],
     ["bg-4", [0, 0, 1]],
     ["bg-5", [0, 0, 1]],
