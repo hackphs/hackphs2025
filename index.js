@@ -2,37 +2,6 @@ const button = document.querySelector("button");
 const form = document.querySelector("form");
 const emailInp = document.querySelector("input");
 
-button.addEventListener("click", e => {
-    e.preventDefault();
-    emailInp.setCustomValidity("");
-    emailInp.checkValidity();
-    if (!form.checkValidity() || emailInp.value == "") {
-        if (emailInp.value == "") emailInp.setCustomValidity("Must enter an email");
-        else if (emailInp.value.length > 100) emailInp.setCustomValidity("Email is too long");
-        else emailInp.setCustomValidity("");
-        form.reportValidity();
-        return;
-    }
-    button.setAttribute("disabled", "");
-
-    document.querySelector("#howvisit").showModal();
-    window.onbeforeunload = (event) => { event.returnValue = "bro"; return "bro"; };
-    fetch("https://hackphs.pythonanywhere.com/", {
-        method: "POST",
-        body: JSON.stringify({ email: emailInp.value }),
-    }).then(data => data.text().then(text => {
-        setTimeout(button.removeAttribute.bind(button, "disabled"), 5000);
-        if (text == "E") return;
-        button.className = "notified";
-        emailInp.addEventListener("input", () => { button.className = "unnotified"; });
-
-        if (emailInp.value == "storby@hackphs.tech") {
-            document.body.className = "sunset";
-            setTimeout(() => document.body.className = "night", 14500);
-        }
-    }));
-});
-
 // om admits orz
 
 const lastPressed = []; // change
@@ -95,36 +64,6 @@ window.addEventListener("keydown", e => {
             { transform: "rotate(360deg)" }
         ], { duration: 2000 }));
     }
-});
-
-document.querySelectorAll(".checker").forEach(el => {
-    let a = el;
-    if (el.id == "other") a = el.querySelector(".checkbox");
-    a.addEventListener("click", () => {
-        if (el.classList.contains("checked")) el.classList.remove("checked");
-        else el.classList.add("checked");
-    })
-});
-
-document.querySelector("#other input").addEventListener("keyup", function () {
-    console.log(this.value);
-    if (this.value === "") document.querySelector("#other").classList.remove("checked");
-    else document.querySelector("#other").classList.add("checked");
-});
-
-document.querySelectorAll(".checkbox").forEach(el => { el.innerHTML = `<div class="checkbox-inner fa-solid fa-check"></div>` });
-
-document.querySelector("#submit-dialog").addEventListener("click", () => {
-    let res = [emailInp.value,];
-    document.querySelectorAll("#visit-form div").forEach(el => {
-        if (el.id != "other" && el.classList.contains("checked")) res.push(el.id);
-        if (el.id == "other" && el.classList.contains("checked")) res.push("OTHER/" + el.querySelector("input").value);
-    });
-
-    fetch("https://hackphs.pythonanywhere.com/", {
-        method: "POST",
-        body: JSON.stringify(res)
-    }).then(() => howvisit.close());
 });
 
 document.querySelectorAll("dialog").forEach(el => el.addEventListener("close", () => {

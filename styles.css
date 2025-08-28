@@ -106,7 +106,7 @@ body.night {
 }
 
 input,
-button {
+button, .button {
     background: #0005;
     border: 1px #bbb solid;
     border-radius: 0.5rem;
@@ -120,9 +120,11 @@ button {
     font-size: 1rem;
 }
 
-#container input {
-    width: 5ch;
-    flex-grow: 1;
+a.button {
+    display:inline-block;
+    &:hover {
+        text-decoration: none;
+    }
 }
 
 button[disabled] {
@@ -133,54 +135,27 @@ button[disabled] {
     }
 }
 
-button:hover {
+button:hover, .button:hover {
     cursor: pointer;
     background: #ccc5;
 }
 
-button:active:not([disabled]) {
+button:active:not([disabled]), .button:active:not([disabled]) {
     top: 0.1rem;
 }
 
-#email-add button {
-    max-width: 12ch;
-    min-width: 8ch;
-    height: 2.25rem;
-}
-
-input::placeholder {
-    font-style: italic;
-    color: #ccc;
-}
-
-#container a {
+#desc a {
     color: #cdf;
     text-decoration: none;
 }
 
-#container a:hover {
+#desc a:hover {
     text-decoration: underline;
 }
 
-#container h3 {
+/* #container h3 {
     font-weight: 500;
-}
-
-#container i.fa-check {
-    color: rgb(115, 255, 115);
-}
-
-button.unnotified i.fa-check {
-    display: none;
-}
-
-button.notified i.fa-check {
-    display: block;
-}
-
-button.notified p {
-    display: none;
-}
+} */
 
 img#icon {
     position: absolute;
@@ -224,6 +199,33 @@ img#icon {
     color: rgb(62, 151, 192);
 }
 
+.button.register {
+    font-size:20pt;
+    padding: 1rem;
+    letter-spacing: 0.05rem;
+    margin-top:1rem;
+    border-radius: 1rem;
+    background:none;
+    background-image: linear-gradient(90deg, rgba(61, 76, 119, 0.9) 50%, #0005 50%);
+    background-size: 200%;
+    background-position-x: 100%;
+    border:2px solid white;
+    text-decoration: none;
+
+    &:hover {
+        background-position-x: 0%;
+    }
+}
+
+.button.register i {
+    position: relative;
+    left:0;
+    transition:left 0.1s;
+}
+.button.register:hover i {
+    left:5px;
+}
+
 @media screen and (max-width:749px) and (max-aspect-ratio:1.5) {
     #outer {
         padding: 2rem 1rem 1rem 1rem;
@@ -253,6 +255,7 @@ img#icon {
         padding: 1rem;
         border-radius: 10rem;
         margin-top: 1rem;
+        margin:0;
     }
 
     #container {
@@ -260,6 +263,11 @@ img#icon {
         flex-direction: column;
         justify-items: center;
         width: 100%;
+    }
+
+    .button.register {
+        margin:0;
+        border-radius:4rem;
     }
 }
 
@@ -343,7 +351,7 @@ img#icon {
 
 }
 
-button * {
+button *, .button * {
     padding: 0;
     margin: 0;
 }
@@ -563,8 +571,9 @@ footer p {
     align-items: center;
     gap: 0;
     transition: gap .5s;
-    height: 2rem;
+    height: 2.5rem;
     aspect-ratio: 1;
+    font-size: 1.25rem;
 }
 
 .section-button span {
@@ -685,3 +694,4 @@ dialog details a {
 dialog details a:hover {
     color: #76aef8;
 }
+
