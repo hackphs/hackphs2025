@@ -594,6 +594,28 @@ footer p {
     width: 7ch;
 }
 
+#sponsor-button:hover span {
+    width:7ch;
+}
+
+@media screen and (min-width: 1000px) {
+    .section-button {
+        gap: 0.5rem;
+    }
+
+    #faq-button span {
+        width: 4.2ch;
+    }
+
+    #schedule-button span {
+        width: 7ch;
+    }
+
+    #sponsor-button span {
+        width:7ch;
+    }
+}
+
 .section-button:active {
     bottom: 0.4rem;
 }
@@ -687,14 +709,48 @@ tr td:nth-child(1) {
     width: 8ch;
 }
 
-dialog details a {
+dialog a {
     padding: 0;
 }
 
-dialog details a:hover {
+dialog a:hover {
     color: #76aef8;
 }
 
 .sponsors {
     font-size:0.74rem;
+}
+
+.gold h2 {
+    color:gold;
+}
+
+.silver h2 {
+    color:silver;
+}
+
+.bronze h2 {
+    color:rgb(177,136,47);
+}
+
+div.sponsor-section {
+    display: flex;
+    flex-direction:row;
+    gap:2rem;
+    justify-content:space-evenly;
+}
+
+.sponsor-section a{
+    width: 95%;
+    transition: all 0.1s;
+    display: flex;
+    justify-content: center;
+}
+
+.sponsor-section a img {
+    max-height:10rem;
+}
+
+.sponsor-section a:hover {
+    scale:105%;
 }

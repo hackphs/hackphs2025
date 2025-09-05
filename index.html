@@ -29,11 +29,11 @@
             <img id="icon-mobile" src="static/icon.svg" />
             <h2>11.01-11.02</h2>
             <div id="desc">
-                <p>Join us for our sixth annual 24-hour, 300+ student hackathon at <a target="_blank"
+                <p>Join us for our sixth annual 24-hour, 200+ student hackathon at <a target="_blank"
                         href="https://maps.app.goo.gl/U3HSVMJpp6UsMfad8">
                         Princeton High School</a>!</p>
-                        <br>
-                <i class="sponsors">Interested in sponsoring? Check our our <a href="prospectus.pdf" target="_blank">prospectus</a> and contact us at <a href="mailto:outreach@hackphs.tech">outreach@hackphs.tech</a>!</i>
+                        <!-- <br> -->
+                <!-- <i class="sponsors">Interested in sponsoring? Check our our <a href="prospectus.pdf" target="_blank">prospectus</a> and contact us at <a href="mailto:outreach@hackphs.tech">outreach@hackphs.tech</a>!</i> -->
                 <!-- <p>Check out our <a href="https://hackphs2025.devpost.com">devpost</a> and <i>sign up</i>!</p> -->
             </div>
             <a class="button register" href="https://hackphs2025.devpost.com/register" target="_blank"><span>Register</span> <i class="fa-solid fa-arrow-right"></i></a>
@@ -44,6 +44,11 @@
 
     <!-- Bottom right corner buttons -->
     <div id="buttons">
+        <!-- Button for schedule -->
+        <button class="section-button" id="sponsor-button"
+            onclick="sponsor.showModal(); window.location.hash='sponsor';"><i class="fa-solid fa-handshake"></i>
+            <span>Sponsors</span>
+        </button>
         <!-- Button for schedule -->
         <button class="section-button" id="schedule-button"
             onclick="schedule.showModal(); window.location.hash='schedule';"><i class="fa-solid fa-calendar"></i>
@@ -58,6 +63,38 @@
     <footer>
         <p>©hackPHS 2025</p>
     </footer>
+
+    <!-- Sponsors popup -->
+    <dialog id="sponsor" class="popup" aria-hidden="true">
+        <button class="close fa-solid fa-x" onclick="sponsor.close();"></button>
+        <h1>Sponsors</h1>
+        <div class="all-sponsors">
+
+            <div class="gold">
+                <h2>Gold</h2>
+                <div class="sponsor-section">
+                    <i>Your company goes here!</i>
+                </div>
+            </div>
+            <div class="silver">
+                <h2>Silver</h2>
+                <div class="sponsor-section">
+                    <i>Your company goes here!</i>
+                </div>
+            </div>
+            <div class="bronze">
+                <h2>Bronze</h2>
+                <div class="sponsor-section">
+                    <a title="Hudson River Trading" href="https://www.hudsonrivertrading.com/"><img src="static/sponsors/hrt.svg"></a>
+                </div>
+            </div>
+        </div>
+        <p>
+            Interested in sponsoring? Check out our <a href="prospectus.pdf" target="_blank">prospectus</a> and reach out to us at <a href="mailto:outreach@hackphs.tech">outreach@hackphs.tech</a>!
+            <br><br>
+            Want to support us directly? Please donate to our <a href="https://www.gofundme.com/f/hackphs-2025">gofundme</a>!
+        </p>
+    </dialog>
 
     <!-- FAQs popup -->
     <dialog id="faqs" class="popup" aria-hidden="true">
