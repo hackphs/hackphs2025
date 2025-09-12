@@ -75,3 +75,5 @@ if (window.location.hash != '') {
     try { document.querySelector(window.location.hash).showModal(); }
     catch (e) { }
 }
+
+document.querySelector(".button.register").style = `font-size:${20 + Math.min(0.5 * (Date.now() - (new Date("9/12/2025")))/(1000*60*60*24),20)}pt`;
