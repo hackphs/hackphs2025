@@ -58,7 +58,7 @@ window.addEventListener("keydown", e => {
     if (n < 10) return;
 
     if (allEqual(lastPressed.slice(n - 10), ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"])) {
-        document.body.style.overflow = "hidden";
+        // document.body.style.overflow = "hidden";
         document.querySelectorAll("body *").forEach(el => el.animate([
             { transform: "rotate(0deg)" },
             { transform: "rotate(360deg)" }
@@ -77,3 +77,42 @@ if (window.location.hash != '') {
 }
 
 document.querySelector(".button.register").style = `font-size:${20 + Math.min(0.5 * (Date.now() - (new Date("9/12/2025")))/(1000*60*60*24),20)}pt`;
+
+const lerp = (a,b,amount) => a+(b-a)*amount;
+const lerp3 = (a,b,amount) => [lerp(a[0],b[0],amount),lerp(a[1],b[1],amount),lerp(a[2],b[2],amount)]
+
+/**
+ * @param {number} scroll 0-1 = proportion of how scrolled the page is
+ */
+function updateBGColor(scroll) {
+    const bg = document.querySelector("html");
+    
+    const startTop = [184,193,215];
+    const midTop = [13, 27, 99];
+    const endTop = [4,11,48];
+
+    const startBot = [247,177,176];
+    const midBot = [125, 70, 28];
+    const endBot = [12,24,87];
+    let top=0, bot=0;
+    if (scroll < 0.33) {
+        top = lerp3(startTop,midTop,scroll*3);
+        bot = lerp3(startBot,midBot,scroll*3);
+    }
+    else {
+        top = lerp3(midTop,endTop,(scroll-0.66)*3);
+        bot = lerp3(midBot,endBot,(scroll-0.66)*3);
+    }
+    bg.style.setProperty("--grad-1",`rgb(${top[0]} ${top[1]} ${top[2]})`);
+    bg.style.setProperty("--grad-2",`rgb(${bot[0]} ${bot[1]} ${bot[2]})`);
+}
+
+function updateBG() {
+    const h = document.body.scrollHeight - window.innerHeight;
+    console.log(window.scrollY,h);
+    updateBGColor(window.scrollY/h);
+    document.body.style.setProperty("--scroll",Math.max(0,window.scrollY/h));
+}
+
+window.addEventListener("scroll",updateBG);
+setInterval(updateBG,200);

@@ -1,8 +1,8 @@
 :root {
     font-size: 1rem;
-    background: rgb(184 193 215);
-
+    background: #bbbac9;
     color-scheme: dark;
+    scroll-behavior: smooth;
 }
 
 * {
@@ -23,152 +23,145 @@
     inherits: true;
 }
 
-body {
+:root {
     --grad-1: rgb(184 193 215);
     --grad-2: rgb(247 177 176);
+
+    background:--grad-1;
+}
+
+body {
+    --scroll:0;
     margin: 0;
     padding: 0;
     height: 100svh;
     max-height: 100svh;
     overflow: hidden auto;
-    background: center/cover linear-gradient(var(--grad-1) 0%, var(--grad-2) 100%) no-repeat;
 
     position: relative;
-    transition-timing-function: linear;
-
-    transition: --grad-1 15s, --grad-2 15s;
 }
 
-/* The background */
-body::before {
+#bg, #orange {
+    position:fixed;
+    z-index:-7;
+    inset:0;
+}
+
+/* Sky */
+#bg {
+    background: var(--grad-1);
+    background: linear-gradient(var(--grad-1) 0%, var(--grad-2) 100%);
+    transition: none;
+    transition-timing-function: linear;
+}
+
+/* Mountain */
+#bg::before {
     content: "";
     display: block;
     position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-
+    inset:0;
+    z-index:-10;
     background-image: url("static/mountain.svg");
 
     background-repeat: no-repeat;
-    background-position: center;
+    background-position-x: center;
+    background-position-y: calc(50% + var(--scroll)*100vh);
     background-size: cover;
-    filter: hue-rotate(360deg);
+    /* filter: blur(min(calc(max(var(--scroll)-0,0) * 8rem),2rem)); */
 
-    transition: filter 15s;
+    transition: filter 0.2s, background-position-y 0.2s;
+}
+
+/* Stars */
+#bg::after {
+    content: "";
+    display: block;
+    position: absolute;
+    inset:0;
+    z-index:-8;
+    /* background: #df763308; */
+    background-image: url("static/star.svg");
+
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: calc(50% + var(--scroll)*3vh);
+    background-size: cover;
+    /* transform: scale(1.2); */
+    /* filter: blur(min(calc(var(--scroll) * 4rem),2rem)); */
+
+    transition:filter 0.2s;
+}
+
+#orange {
+    z-index:-7;
+    background: #df763320;
+    opacity: max(calc(1 - var(--scroll)*2),0);
+    transition: none;
+}
+
+#content {
+    padding-inline:4rem;
+}
+
+#content h1 {
+    margin-bottom: 2rem;
+    font-size:4rem;
+    font-size:4rem;
+}
+
+#content h2 {
+    font-size:2.5rem;
+}
+
+#content {
+    font-size: 1.3rem;
 }
 
 @media screen and (min-aspect-ratio:16/9) {
-    body::before {
+    #bg, #bg::before, #bg::after {
         background-size: 101%;
     }
-}
-
-body.sunset::before {
-    filter: hue-rotate(350deg);
-}
-
-body.night::before {
-    filter: hue-rotate(335deg);
-}
-
-body.sunset {
-    --grad-1: rgb(12, 24, 87);
-    --grad-2: rgb(129, 59, 8);
-}
-
-body.night {
-    --grad-1: rgb(4, 11, 48);
-    --grad-2: rgb(12, 24, 87);
 }
 
 #outer {
     display: flex;
     height: 100svh;
-    padding: 2rem;
+    padding: 3rem;
     box-sizing: border-box;
     position: relative;
     z-index: 2;
 }
 
-#container {
-    padding: 1rem;
-    border-radius: 1rem;
+#top-container {
     align-items: center;
     gap: 2rem;
-}
-
-#email-add {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-}
-
-input,
-button, .button {
-    background: #0005;
-    border: 1px #bbb solid;
-    border-radius: 0.5rem;
-    backdrop-filter: blur(1rem);
-    -webkit-backdrop-filter: blur(1rem);
-    position: relative;
-    top: 0;
-    transition: top 0.1s, all 0.2s;
-
-    padding: 0.5rem;
-    font-size: 1rem;
-}
-
-a.button {
-    display:inline-block;
-    &:hover {
-        text-decoration: none;
-    }
-}
-
-button[disabled] {
-    background: #bbb5;
-
-    &:hover {
-        cursor: not-allowed;
-    }
-}
-
-button:hover, .button:hover {
-    cursor: pointer;
-    background: #ccc5;
-}
-
-button:active:not([disabled]), .button:active:not([disabled]) {
-    top: 0.1rem;
 }
 
 #desc a {
     color: #cdf;
     text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
-#desc a:hover {
-    text-decoration: underline;
-}
-
-/* #container h3 {
-    font-weight: 500;
-} */
-
-img#icon {
+#icon {
     position: absolute;
     width: 6rem;
     margin: 1rem;
 }
 
-#container h1 {
+#top-container h1 {
     font-size: 6rem;
     margin: 4rem 0 1rem 0;
 }
 
-#container h2 {
+#top-container h1.but-blue {
+    color: rgb(62, 151, 192);
+}
+
+#top-container h2 {
     font-size: 2.5rem;
     font-style: italic;
     font-weight: 200;
@@ -178,8 +171,8 @@ img#icon {
 
 #desc {
     background: rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(1rem);
-    -webkit-backdrop-filter: blur(1rem);
+    backdrop-filter: blur(2rem);
+    -webkit-backdrop-filter: blur(2rem);
     border-radius: 1rem;
     padding: 1rem;
     max-width: 50ch;
@@ -190,30 +183,30 @@ img#icon {
     margin: 0;
 }
 
-#desc h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-}
-
-#container h1.but-blue {
-    color: rgb(62, 151, 192);
-}
-
 .button.register {
+    backdrop-filter: blur(2rem);
+    -webkit-backdrop-filter: blur(2rem);
+    position: relative;
+    top: 0;
+    transition: top 0.1s, all 0.2s;
+    display:inline-block;
     font-size:20pt;
     padding: 1rem;
     letter-spacing: 0.05rem;
     margin-top:1rem;
     border-radius: 1rem;
-    background:none;
     background-image: linear-gradient(90deg, rgba(61, 76, 119, 0.9) 50%, #0005 50%);
     background-size: 200%;
     background-position-x: 100%;
     border:2px solid white;
+    
     text-decoration: none;
 
     &:hover {
         background-position-x: 0%;
+    }
+    &:active {
+        top:0.1rem;
     }
 }
 
@@ -227,11 +220,15 @@ img#icon {
 }
 
 @media screen and (max-width:749px) and (max-aspect-ratio:1.5) {
+    #content {
+        padding-inline:1rem;
+    }
+
     #outer {
         padding: 2rem 1rem 1rem 1rem;
     }
 
-    #container h1 {
+    #top-container h1 {
         font-size: 10vw;
         text-align: center;
         margin-top: 6rem;
@@ -239,26 +236,26 @@ img#icon {
         border-radius: 10rem;
         padding: 0.5rem 1.5rem;
         background: rgba(0, 0, 0, 0.2);
-        backdrop-filter: blur(1rem);
-        -webkit-backdrop-filter: blur(1rem);
+        backdrop-filter: blur(2rem);
+        -webkit-backdrop-filter: blur(2rem);
     }
 
-    #container h1.but-blue {
+    #top-container h1.but-blue {
         color: #5ac7fa;
     }
 
-    #container h2 {
+    #top-container h2 {
         font-size: 4vw;
         background: rgba(0, 0, 0, 0.2);
-        backdrop-filter: blur(1rem);
-        -webkit-backdrop-filter: blur(1rem);
+        backdrop-filter: blur(2rem);
+        -webkit-backdrop-filter: blur(2rem);
         padding: 1rem;
         border-radius: 10rem;
         margin-top: 1rem;
         margin:0;
     }
 
-    #container {
+    #top-container {
         display: flex;
         flex-direction: column;
         justify-items: center;
@@ -272,17 +269,17 @@ img#icon {
 }
 
 @media screen and (max-height:650px) and (min-aspect-ratio:1.5) {
-    img#icon {
+    #icon {
         width: 4rem;
     }
 
-    #container h1 {
+    #top-container h1 {
         margin-top: 2rem;
         margin-bottom: 0;
         font-size: 14svh;
     }
 
-    #container h2 {
+    #top-container h2 {
         font-size: 7svh;
     }
 
@@ -300,7 +297,7 @@ img#icon {
     right: -200px;
 }
 
-#container h1 {
+#top-container h1 {
     z-index: 2;
     position: relative;
 }
@@ -314,8 +311,16 @@ img#icon {
         display: none;
     }
 
-    #container h1 {
+    #top-container h1 {
         margin: 0;
+    }
+
+    #content h1 {
+        font-size:3rem;
+    }
+
+    #content h2 {
+        font-size:2rem;
     }
 }
 
@@ -332,14 +337,14 @@ img#icon {
     }
 
 
-    #container {
+    #top-container {
         flex-direction: column;
         justify-content: space-around;
         gap: 0.5rem;
         box-sizing: border-box;
-        min-height: 100svh;
-        height: 100svh;
-        max-height: 100svh;
+        min-height: 90svh;
+        height: 90svh;
+        max-height: 90svh;
         padding: 2rem;
 
         overflow: hidden;
@@ -348,199 +353,15 @@ img#icon {
     #outer {
         padding: 0;
     }
-
 }
 
-button *, .button * {
+button * {
     padding: 0;
     margin: 0;
-}
-
-
-
-dialog {
-    background-color: #0005;
-    backdrop-filter: blur(10px);
-    padding: 1rem;
-    box-sizing: border-box;
-
-}
-
-@media screen and (min-width:501px) and (min-height:401px) {
-    dialog {
-        min-width: calc(min(max(50%, 80ch), 100vw - 4rem));
-        max-width: calc(100vw - 4rem);
-        max-height: calc(100vh - 4rem);
-        border-radius: 1rem;
-        border: 1px solid white;
-    }
-
-    #faqs {
-        width: calc(100vw - 4rem);
-    }
-
-    dialog::backdrop {
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
-    }
-}
-
-@media screen and (max-width:500px),
-(max-height:400px) {
-    dialog {
-        border: none;
-        margin: 0;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        box-sizing: border-box;
-        min-width: 100vw;
-        min-height: 100svh;
-        padding: 1.5rem;
-    }
-
-
-}
-
-dialog h1 {
-    margin: 0;
-    font-size: 3rem;
-    text-align: center;
-}
-
-dialog button.close {
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 1.25rem;
-    position: absolute;
-    z-index: 3;
-    top: 1.5rem;
-    right: 1.5rem;
-
-    &:active {
-        top: 1.6rem;
-    }
-
-    &:hover {
-        background: #ccc5;
-    }
-}
-
-div.checkbox {
-    width: 1.25rem;
-    height: 1.25rem;
-    min-width: 1.25rem;
-    min-height: 1.25rem;
-
-    display: inline-flex;
-    border-radius: 0.25rem;
-
-    background-color: #0003;
-    backdrop-filter: blur(10px);
-    border: 1px white solid;
-    overflow: hidden;
-
-    align-items: center;
-    justify-content: center;
-
-    position: relative;
-    top: 0;
-
-    transition: top 0.04s;
-}
-
-div.checker {
-    margin: 0.75rem 0;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 1.5rem;
-
-    &:hover {
-        cursor: pointer;
-    }
-}
-
-div.checker:hover div.checkbox {
-    background-color: #666d;
-}
-
-div.checkbox-inner {
-    display: flex;
-    background-color: #3a7acf;
-    width: 0;
-    height: 0;
-    transition: width .2s, height .2s, transform .2s;
-    font: "Figtree";
-    font-size: 1rem;
-    font-weight: 900;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-
-    border-radius: 0.5rem;
-    transform: rotateZ(-90deg);
-    transform-origin: center;
-
-    box-sizing: border-box;
-}
-
-div.checker.checked div.checkbox-inner {
-    width: 2rem;
-    height: 2rem;
-    transform: rotateZ(0deg);
-}
-
-div.checker:active:not(#other) div.checkbox,
-#other div.checkbox:active {
-    top: 0.1rem;
-}
-
-#visit-form {
-    user-select: none;
-}
-
-dialog[open] input {
-    width: calc(min(100%, 30ch));
-    font-size: 1.25rem;
-    padding: .25rem;
-}
-
-dialog[open] button,
-dialog[open] input {
-    background: #0003;
-}
-
-dialog {
-    opacity: 0;
-    transition: all .5s;
-}
-
-dialog:not([open]) {
-    display: block;
-    max-width: 0;
-    max-height: 0;
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -100;
-}
-
-dialog[open] {
-    opacity: 1;
 }
 
 footer {
-    display: block;
-    position: absolute;
-    bottom: 0.5rem;
-    left: 0.5rem;
-    z-index: 2;
+    padding:1rem;
 }
 
 footer p {
@@ -550,77 +371,7 @@ footer p {
     font-weight: 200;
 }
 
-#buttons {
-    display: flex;
-    position: fixed;
-    box-sizing: border-box;
-    top: unset;
-    bottom: 0.5rem;
-    right: 0.5rem;
-    z-index: 2;
-    flex-direction: row;
-    gap: .5rem;
-}
-
-.section-button {
-    box-sizing: border-box;
-    z-index: 2;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 0;
-    transition: gap .5s;
-    height: 2.5rem;
-    aspect-ratio: 1;
-    font-size: 1.25rem;
-}
-
-.section-button span {
-    width: 0;
-    overflow: hidden;
-    transition: width .5s;
-}
-
-.section-button:hover {
-    gap: 0.5rem;
-}
-
-#faq-button:hover span {
-    width: 4.2ch;
-}
-
-#schedule-button:hover span {
-    width: 7ch;
-}
-
-#sponsor-button:hover span {
-    width:7ch;
-}
-
-@media screen and (min-width: 1000px) {
-    .section-button {
-        gap: 0.5rem;
-    }
-
-    #faq-button span {
-        width: 4.2ch;
-    }
-
-    #schedule-button span {
-        width: 7ch;
-    }
-
-    #sponsor-button span {
-        width:7ch;
-    }
-}
-
-.section-button:active {
-    bottom: 0.4rem;
-}
-
-.popup details:first-of-type {
+details:first-of-type {
     border-top: 1px solid white;
 }
 
@@ -631,10 +382,27 @@ details {
     background-color: #0002;
 }
 
+#faq-box {
+    backdrop-filter: blur(0.5rem);
+    -wekbit-backdrop-filter: blur(0.5rem);
+    border-radius: .5rem;
+}
+
 details summary {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     transition: all 0.2s, border-bottom 0s;
     background: #0005;
+}
+
+details summary i {
+    padding:0;
+    transform:rotateZ(0deg);
+    transition:transform 0.2s;
+}
+details[open] summary i {
+    transform:rotateZ(180deg);
 }
 
 details[open] summary {
@@ -655,30 +423,23 @@ details summary:hover {
     cursor: pointer;
 }
 
-.popup details:first-of-type {
+details:first-of-type {
     border-radius: .5rem .5rem 0 0;
 }
 
-.popup details:first-of-type summary {
+details:first-of-type summary {
     border-radius: .5rem .5rem 0 0;
 }
 
-.popup details:last-of-type {
+details:last-of-type {
     border-radius: 0 0 .5rem .5rem;
 }
 
-.popup details:last-of-type:not([open]) summary {
+details:last-of-type:not([open]) summary {
     border-radius: 0 0 .5rem .5rem;
 }
 
-.popup h1 {
-    margin-bottom: 2rem;
-}
-
-.popup {
-    font-size: 1.25rem;
-}
-
+/* Schedule */
 table {
     border: 1px solid white;
     width: 100%;
@@ -686,11 +447,13 @@ table {
     border-spacing: 0;
     border-radius: .5rem;
     overflow: hidden;
+    backdrop-filter: blur(0.5rem);
 }
 
 thead td {
     background-color: #111c;
     border-bottom: 1px solid white;
+    transition: none;
 }
 
 td {
@@ -701,56 +464,120 @@ tbody td {
     background-color: #222a;
 }
 
+tbody tr:hover td {
+    background-color: #444a;
+}
+
 tbody tr:nth-child(2n) td {
     background-color: #333a;
+}
+
+tbody tr:nth-child(2n):hover td {
+    background-color: #444a;
 }
 
 tr td:nth-child(1) {
     width: 8ch;
 }
 
-dialog a {
+/* Links */
+#content a {
     padding: 0;
 }
 
-dialog a:hover {
+#content a:hover {
     color: #76aef8;
 }
 
-.sponsors {
-    font-size:0.74rem;
-}
-
-.gold h2 {
-    color:gold;
-}
-
-.silver h2 {
-    color:silver;
-}
-
-.bronze h2 {
-    color:rgb(177,136,47);
-}
-
-div.sponsor-section {
+.sponsor-section {
     display: flex;
     flex-direction:row;
     gap:2rem;
     justify-content:space-evenly;
+    /* width: 100%; */
+    flex-wrap: wrap;
+    margin-bottom:2rem;
 }
 
 .sponsor-section a{
-    width: 95%;
     transition: all 0.1s;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .sponsor-section a img {
-    max-height:10rem;
+    height:10rem;
+}
+
+.sponsor-section a.pure-buttons img {
+    height:7rem;
 }
 
 .sponsor-section a:hover {
     scale:105%;
+}
+
+.section {
+    margin-bottom:4rem;
+    min-height:100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section:last-of-type {
+    min-height:1px;
+}
+
+@keyframes popin {
+    0% {
+        transform:translateY(-200%);
+        opacity:0;
+    }
+    100% {
+        transform:translateY(0%);
+        opacity:1;
+    }
+}
+
+#mlh-trust-badge {
+    opacity:0;
+    animation:popin 2s forwards;
+    animation-delay:0s;
+}
+
+@media screen and (max-width:500px) {
+    #mlh-trust-badge {
+        transform:translateX(40px);
+        /* This is a horrible janky fix but i want to fix other things first lemme cook */
+    }
+}
+
+#about div {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(2rem);
+    -webkit-backdrop-filter: blur(2rem);
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-bottom:2rem;
+    &:hover {
+        background: rgba(20, 20, 20, 0.3);
+    }
+}
+
+#about div h2 {
+    margin-block:0;
+}
+
+#top-chevron {
+    position: absolute;
+    bottom: 2vh;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    right: 0;
+    font-size: 4rem;
+    text-decoration: none;
 }

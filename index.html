@@ -22,11 +22,17 @@
 </head>
 
 <body>
-
-    <a id="mlh-trust-badge" style="display:block;max-width:100px;min-width:60px;position:fixed;right:50px;top:0;width:10%;z-index:10000" href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2026-season&utm_content=white" target="_blank"><img src="https://s3.amazonaws.com/logged-assets/trust-badge/2026/mlh-trust-badge-2026-white.svg" alt="Major League Hacking 2026 Hackathon Season" style="width:100%"></a>
+    <div id="bg"></div>
+    <div id="orange"></div>
+    <a id="mlh-trust-badge"
+        style="display:block;max-width:100px;min-width:60px;position:fixed;right:50px;top:0;width:10%;z-index:10000"
+        href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2026-season&utm_content=white"
+        target="_blank"><img
+            src="https://s3.amazonaws.com/logged-assets/trust-badge/2026/mlh-trust-badge-2026-white.svg"
+            alt="Major League Hacking 2026 Hackathon Season" style="width:100%"></a>
     <img id="icon" src="static/icon.svg" />
     <div id="outer">
-        <div id="container">
+        <div id="top-container">
             <h1>hackPHS 2025</h1>
             <img id="icon-mobile" src="static/icon.svg" />
             <h2>11.01-11.02</h2>
@@ -35,348 +41,365 @@
                         href="https://maps.app.goo.gl/U3HSVMJpp6UsMfad8">
                         Princeton High School</a>!</p>
             </div>
-            <a class="button register" href="https://docs.google.com/forms/d/e/1FAIpQLScbSYgfmA4JRdIrHRyInVTRwsIOokYCf3FQEmV-aUlpHegA3w/viewform" target="_blank"><span>Register</span> <i class="fa-solid fa-arrow-right"></i></a>
+            <a class="button register"
+                href="https://docs.google.com/forms/d/e/1FAIpQLScbSYgfmA4JRdIrHRyInVTRwsIOokYCf3FQEmV-aUlpHegA3w/viewform"
+                target="_blank"><span>Register</span> <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <a id="top-chevron" href="#content"><i class="fa-regular fa-chevron-down"></i></a>
+    </div>
+    <div id="content">
+        <div class="section" id="about">
+            <h1>About</h1>
+            <div>
+                <h2>What is hackPHS?</h2>
+                <p>
+                    hackPHS hosts over 300 high school students from across New Jersey to collaborate, innovate, and
+                    create in a 24-hour, student organized hackathon based at Princeton High School. Whether you're a
+                    complete beginner or an experienced hacker, hackPHS will have something for you! hackPHS's goal is
+                    to provide a space for young and eager minds to collaborate with others, form new bonds, and create
+                    meaningful projects.
+                </p>
+            </div>
+            <div>
+                <h2>When and where is hackPHS?</h2>
+                <p>
+                    hackPHS will be held in the cafeteria of Princeton High School, located at <a
+                        href="https://goo.gl/maps/kkXeczMvXWr" target="_blank">151 Moore St, Princeton, NJ</a>.
+                    Limited parking will be available around the school. You should plan on arriving around 9:00 AM on
+                    Saturday,
+                    November 1st and leaving sometime after 11:30 PM on Sunday, November 2nd.
+                </p>
+            </div>
+            <div>
+                <h2>Who pays for all of this?</h2>
+                <p>
+                    hackPHS 2025 is completely <b>free</b> for everyone, thanks to our amazing <a
+                        href="#sponsors">sponsors</a>!
+                </p>
+            </div>
+            <div>
+                <h2>What is a hackathon?</h2>
+                <p>Hackathons are where creative and enthusiastic people come together to build awesome projects in
+                    a single
+                    all-nighter. With awesome workshops and incredible prizes, hackers will learn about new tech,
+                    build
+                    innovative solutions to real-world problems, and share their creation with the community, all in
+                    one
+                    event. If you are looking for a competition, a place to meet fellow hackers, or even just a
+                    place to
+                    learn how to code, hackathons are for you. If you want to learn more, see the <a
+                        href="https://mlh.io/faq/" target="_blank">MLH Hackathon FAQ</a>.
+                </p>
+            </div>
+        </div>
+        <div class="section">
+            <h1>FAQs</h1>
+            <div id="faq-box">
+                <details>
+                    <summary>Who can attend this event? <i class="fa-chevron-down fa-solid"></i></summary>
+                    <p>hackPHS 2025 is for high school students only. If you are no longer a high schooler and would
+                        like to help out, consider becoming a mentor. Email us at <a
+                            href="team@hackphs.tech">team@hackphs.tech</a> for more info on this! </p>
+                </details>
+                <details>
+                    <summary>How do I apply?<i class="fa-chevron-down fa-solid"></i></summary>
+                    <p>Registration is now open for 2025! All you need to do is fill out our <a target="_blank"
+                            href="https://docs.google.com/forms/d/e/1FAIpQLScbSYgfmA4JRdIrHRyInVTRwsIOokYCf3FQEmV-aUlpHegA3w/viewform?usp=dialog">
+                            form</a> and register on our <a href="https://hackphs2025.devpost.com"
+                            target="_blank">devpost</a>
+                        and you'll be good to go!</p>
+                </details>
+                <details>
+                    <summary>How do I become a mentor? Chaperone? Volunteer?<i class="fa-chevron-down fa-solid"></i></summary>
+                    <p>Email us at <a href="mailto:team@hackphs.tech">team@hackphs.tech</a> for more info on this!</p>
+                </details>
+                <details>
+                    <summary>What will be provided during the event?<i class="fa-chevron-down fa-solid"></i></summary>
+                    <p>Free food and drinks will be provided during the hackathon, including options for people with
+                        dietary
+                        restrcitions. If you ever want to sleep during the hackathon, we'll have dedicated quiet
+                        sleeping areas
+                        for y'all to catch some Z's.
+                        Electrical outlets will also be available throughout the cafeteria for all your charging needs.
+                        This
+                        year we will not be providing a hardware lab, so make sure to bring any hardware you want to use
+                        for
+                        your project.
+                    </p>
+                </details>
+                <details>
+                    <summary>What should I bring?<i class="fa-chevron-down fa-solid"></i></summary>
+                    <p>Make sure you’re ready to spend 24 hours away from home. Basically, bring a sleeping bag, extra
+                        clothes,
+                        a toothbrush, and anything else you might need to feel comfortable for a long period of time.
+                        Also,
+                        please bring anything you need for your project such as a laptop, laptop charger, and hardware.
+                    </p>
+                </details>
+                <details>
+                    <summary>How do I form a team?<i class="fa-chevron-down fa-solid"></i></summary>
+                    <p>Teams of up to 4 people are encouraged (though not mandatory) - if you already have a team, you
+                        can form
+                        your team when registering for hackPHS, but teams won't be final until submissions. If you don't
+                        have a
+                        team before the event, don't worry! At the beginning of the event, there will be a team building
+                        workshop, which will be a great way to meet other enthusiastic people and even make new friends.
+                    </p>
+                </details>
+                <details>
+                    <summary>Do you have a Code of Conduct?<i class="fa-chevron-down fa-solid"></i></summary>
+                    <p>All hackers must abide by <a
+                            href="https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md"
+                            target="_blank">Major League Hacking's Code of Conduct.</a> TL;DR - all hackers should
+                        respect one
+                        another. Hackers also must abide by Princeton High School rules while on PHS grounds.
+                    </p>
+                </details>
+                <details>
+                    <summary>What can I win?<i class="fa-chevron-down fa-solid"></i></summary>
+                    <p>hackPHS hopes to emphasize learning and collaboration more so than competition - nonetheless,
+                        there will
+                        be awesome prizes to be won for some of the best hacks made during the event! The full prize
+                        list will
+                        be released later - make sure to follow us on social media to find out when!
+                    </p>
+                </details>
+                <details>
+                    <summary>What can I learn?<i class="fa-chevron-down fa-solid"></i></summary>
+                    <p>While you can learn a great deal in the process of building an ambitious project in such a
+                        limited time
+                        frame, we also plan to offer many introductory workshops (around 1 hour each) during the event,
+                        for
+                        those new to software and/or hardware engineering. Specific topics will include Python, Web
+                        Development,
+                        and Circutry, among many others - check our schedule for the full list!
+                    </p>
+                </details>
+                <details>
+                    <summary>Where can I find hackPHS on social media?<i class="fa-chevron-down fa-solid"></i></summary>
+                    <p>
+                        Follow us on Instagram (<a href="https://www.instagram.com/hackphs/">@hackphs</a>)! We'll be
+                        posting
+                        updates as the event gets closer, so be sure to check it!
+                    </p>
+                </details>
+                <details>
+                    <summary>My question isn't answered here!<i class="fa-chevron-down fa-solid"></i></summary>
+                    <p>
+                        Email us at <a href="mailto:team@hackphs.tech">team@hackphs.tech</a> with any other questions
+                        about the
+                        event!
+                    </p>
+                </details>
+            </div>
+        </div>
+        <div class="section">
+            <h1>Schedule</h1>
+            <i>hackPHS will run from 9:00AM on Saturday, 11/1 until 11:30AM on Sunday, 11/2. This schedule is not final
+                and
+                <b>may change</b> before the event.</i>
+            <h2>Saturday 11/1</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <td>Time</td>
+                        <td>Event</td>
+                        <td>Location</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>9:00AM</td>
+                        <td>Check in opens</td>
+                        <td>Cafeteria</td>
+                    </tr>
+                    <tr>
+                        <td>9:30AM</td>
+                        <td>Mini Programming Competition</td>
+                        <td>Cafeteria</td>
+                    </tr>
+                    <tr>
+                        <td>11:00AM</td>
+                        <td>Opening Ceremony</td>
+                        <td>Cafeteria</td>
+                    </tr>
+                    <tr>
+                        <td>12:00PM</td>
+                        <td>Hacking Starts</td>
+                        <td>Cafeteria</td>
+                    </tr>
+                    <tr>
+                        <td>12:00PM</td>
+                        <td>Team Building Workshop</td>
+                        <td>152</td>
+                    </tr>
+                    <tr>
+                        <td>1:00PM</td>
+                        <td>Lunch</td>
+                        <td>Cafeteria</td>
+                    </tr>
+                    <tr>
+                        <td>2:00PM</td>
+                        <td>Intro to Python</td>
+                        <td>155</td>
+                    </tr>
+                    <tr>
+                        <td>3:00PM</td>
+                        <td>Intro to Java</td>
+                        <td>153</td>
+                    </tr>
+                    <tr>
+                        <td>4:00PM</td>
+                        <td>Beginner's Challenge</td>
+                        <td>152</td>
+                    </tr>
+                    <tr>
+                        <td>4:00PM</td>
+                        <td>Sponsor Challenge</td>
+                        <td>153</td>
+                    </tr>
+                    <tr>
+                        <td>4:30PM</td>
+                        <td>Intro to Circuitry</td>
+                        <td>155</td>
+                    </tr>
+                    <tr>
+                        <td>5:30PM</td>
+                        <td>Intro to Finance in Computer Science</td>
+                        <td>155</td>
+                    </tr>
+                    <tr>
+                        <td>6:30PM</td>
+                        <td>Dinner</td>
+                        <td>Cafeteria</td>
+                    </tr>
+                    <tr>
+                        <td>7:00PM</td>
+                        <td>Photo Booth Opens</td>
+                        <td>Cafeteria</td>
+                    </tr>
+                    <tr>
+                        <td>7:30PM</td>
+                        <td>3D Design and Printing</td>
+                        <td>153</td>
+                    </tr>
+                    <tr>
+                        <td>7:30PM</td>
+                        <td>Sponsor Event</td>
+                        <td>155</td>
+                    </tr>
+                    <tr>
+                        <td>8:00PM</td>
+                        <td>Intro to Neural Networks</td>
+                        <td>153</td>
+                    </tr>
+                    <tr>
+                        <td>9:00PM</td>
+                        <td>Intro to Web Development</td>
+                        <td>153</td>
+                    </tr>
+                    <tr>
+                        <td>9:30PM</td>
+                        <td>MLH Mini-event</td>
+                        <td>152</td>
+                    </tr>
+                    <tr>
+                        <td>10:00PM</td>
+                        <td>Spikeball, Volleyball, Badminton</td>
+                        <td>New Gym</td>
+                    </tr>
+                    <tr>
+                        <td>11:00PM</td>
+                        <td>Chess Tournament</td>
+                        <td>153</td>
+                    </tr>
+                    <tr>
+                        <td>11:00PM</td>
+                        <td>Intro to Computational Mathemagics</td>
+                        <td>155</td>
+                    </tr>
+            </table>
+
+            <h2>Sunday 11/2</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <td>Time</td>
+                        <td>Event</td>
+                        <td>Location</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>12:00AM</td>
+                        <td>Midnight Snack</td>
+                        <td>Cafeteria</td>
+                    </tr>
+                    <tr>
+                        <td>12:00AM</td>
+                        <td>Karaoke + Games</td>
+                        <td>153</td>
+                    </tr>
+                    <tr>
+                        <td>7:30AM</td>
+                        <td>Breakfast</td>
+                        <td>Cafeteria</td>
+                    </tr>
+                    <tr>
+                        <td>9:00AM</td>
+                        <td>Submissions Close, Hacking Ends</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>9:00AM</td>
+                        <td>Spikeball</td>
+                        <td>New Gym</td>
+                    </tr>
+                    <tr>
+                        <td>9:30AM</td>
+                        <td>Engineering Challenge</td>
+                        <td>152</td>
+                    </tr>
+                    <tr>
+                        <td>9:30AM</td>
+                        <td>Judging Begins</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>11:30AM</td>
+                        <td>Closing Ceremony</td>
+                        <td>PAC</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="section" id="sponsors">
+            <h1>Sponsors</h1>
+            <div class="sponsor-section">
+                <a title="Hudson River Trading" href="https://www.hudsonrivertrading.com/"><img
+                        src="static/sponsors/hrt.svg"></a>
+                <a title="Wolfram" href="https://www.wolfram.com/"><img
+                        src="static/sponsors/wolfram.png"></a>
+                <a title="Pure Buttons" href="https://www.purebuttons.com" class="pure-buttons"><img
+                        src="static/sponsors/purebuttons.png"></a>
+                <a title="Major League Hacking" href="https://www.mlh.io" class="pure-buttons"><img
+                        src="https://static.mlh.io/brand-assets/logo/official/mlh-logo-white.svg?_gl=1*t7samu*_ga*MTc2OTU0NTgzMy4xNzU3OTcwMzk3*_ga_E5KT6TC4TK*czE3NTkzMzA1MTAkbzYkZzEkdDE3NTkzMzA1MTYkajU0JGwwJGgw"></a>
+            </div>
+            <p>
+                Interested in sponsoring? Check out our <a href="prospectus.pdf" target="_blank">prospectus</a> and
+                reach out to us at <a href="mailto:outreach@hackphs.tech">outreach@hackphs.tech</a>!
+                <br><br>
+                Want to support us directly? Please donate to our <a
+                    href="https://www.gofundme.com/f/hackphs-2025">gofundme</a>!
+            </p>
         </div>
     </div>
 
-    <img src="static/image2.png" id="birdy" />
-
-    <!-- Bottom right corner buttons -->
-    <div id="buttons">
-        <!-- Button for sponsors -->
-        <button class="section-button" id="sponsor-button"
-            onclick="sponsor.showModal(); window.location.hash='sponsor';"><i class="fa-solid fa-handshake"></i>
-            <span>Sponsors</span>
-        </button>
-        <!-- Button for schedule -->
-        <button class="section-button" id="schedule-button"
-            onclick="schedule.showModal(); window.location.hash='schedule';"><i class="fa-solid fa-calendar"></i>
-            <span>Schedule</span>
-        </button>
-        <!-- Button for FAQs -->
-        <button class="section-button" id="faq-button" onclick="faqs.showModal(); window.location.hash='faqs';"><i
-                class="fa-solid fa-question"></i>
-            <span>FAQs</span>
-        </button>
-    </div>
     <footer>
-        <p>©hackPHS 2025</p>
+        ©hackPHS 2025
     </footer>
 
-    <!-- Sponsors popup -->
-    <dialog id="sponsor" class="popup" aria-hidden="true">
-        <button class="close fa-solid fa-x" onclick="sponsor.close();"></button>
-        <h1>Sponsors</h1>
-        <div class="all-sponsors">
-
-            <!-- <div class="gold">
-                <h2>Gold</h2>
-                <div class="sponsor-section">
-                    [put sponsors here or i eat]
-                </div>
-            </div>
-            <div class="silver">
-                <h2>Silver</h2>
-                <div class="sponsor-section">
-                    [put sponsors here or i eat]
-                </div>
-            </div> -->
-            <div class="bronze">
-                <h2>Bronze</h2>
-                <div class="sponsor-section">
-                    <a title="Hudson River Trading" href="https://www.hudsonrivertrading.com/"><img src="static/sponsors/hrt.svg"></a>
-                </div>
-            </div>
-        </div>
-        <p>
-            Interested in sponsoring? Check out our <a href="prospectus.pdf" target="_blank">prospectus</a> and reach out to us at <a href="mailto:outreach@hackphs.tech">outreach@hackphs.tech</a>!
-            <br><br>
-            Want to support us directly? Please donate to our <a href="https://www.gofundme.com/f/hackphs-2025">gofundme</a>!
-        </p>
-    </dialog>
-
-    <!-- FAQs popup -->
-    <dialog id="faqs" class="popup" aria-hidden="true">
-        <button class="close fa-solid fa-x" onclick="faqs.close();"></button>
-        <h1>FAQs</h1>
-
-        <details>
-            <summary>When and Where is hackPHS?</summary>
-            <p>
-                hackPHS will be held in the cafeteria of Princeton High School, located at <a
-                    href="https://goo.gl/maps/kkXeczMvXWr" target="_blank">151 Moore St, Princeton, NJ</a>. Limited
-                parking will be available around the school. You should plan on arriving around 9:00 AM on Saturday,
-                November 1st and leaving sometime after 11:30 PM on Sunday, November 2nd.
-            </p>
-        </details>
-        <details>
-            <summary>What is a hackathon?</summary>
-            <p>Hackathons are where creative and enthusiastic people come together to build awesome projects in a single
-                all-nighter. With awesome workshops and incredible prizes, hackers will learn about new tech, build
-                innovative solutions to real-world problems, and share their creation with the community, all in one
-                event. If you are looking for a competition, a place to meet fellow hackers, or even just a place to
-                learn how to code, hackathons are for you. If you want to learn more, see the <a href="https://mlh.io/faq/" target="_blank">MLH Hackathon FAQ</a>.
-            </p>
-        </details>
-        <details>
-            <summary>Who can attend this event?</summary>
-            <p>Unfortunately, this event is for high school students only. If you are no longer a high schooler and
-                would like to help out, consider becoming a mentor. Email us at <a href="team@hackphs.tech">team@hackphs.tech</a> for more info on this!
-            </p>
-        </details>
-        <details>
-            <summary>How do I apply?</summary>
-            <p>Registration is now open for 2025! All you need to do is fill out our <a target="_blank" 
-                href="https://docs.google.com/forms/d/e/1FAIpQLScbSYgfmA4JRdIrHRyInVTRwsIOokYCf3FQEmV-aUlpHegA3w/viewform?usp=dialog">
-                form</a> and register on our <a href="https://hackphs2025.devpost.com" target="_blank">devpost</a> and you'll be good to go!</p>
-        </details>
-        <details>
-            <summary>How do I become a mentor? Chaperone? Volunteer?</summary>
-            <p>Email us at <a href="mailto:team@hackphs.tech">team@hackphs.tech</a> for more info on this!</p>
-        </details>
-        <details>
-            <summary>What will be provided during the event?</summary>
-            <p>Free food and drinks will be provided during the hackathon, including options for people with dietary
-                restrcitions. If you ever want to sleep during the hackathon, we'll have dedicated quiet sleeping areas
-                for y'all to catch some Z's.
-                Electrical outlets will also be available throughout the cafeteria for all your charging needs. This
-                year we will not be providing a hardware lab, so make sure to bring any hardware you want to use for
-                your project.
-            </p>
-        </details>
-        <details>
-            <summary>What should I bring?</summary>
-            <p>Make sure you’re ready to spend 24 hours away from home. Basically, bring a sleeping bag, extra clothes,
-                a toothbrush, and anything else you might need to feel comfortable for a long period of time. Also,
-                please bring anything you need for your project such as a laptop, laptop charger, and hardware.
-            </p>
-        </details>
-        <details>
-            <summary>How do I form a team?</summary>
-            <p>Teams of up to 4 people are encouraged (though not mandatory) - if you already have a team, you can form
-                your team when registering for hackPHS, but teams won't be final until submissions. If you don't have a
-                team before the event, don't worry! At the beginning of the event, there will be a team building
-                workshop, which will be a great way to meet other enthusiastic people and even make new friends.
-            </p>
-        </details>
-        <details>
-            <summary>Do you have a Code of Conduct?</summary>
-            <p>All hackers must abide by <a href="https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md"
-                    target="_blank">Major League Hacking's Code of Conduct.</a> TL;DR - all hackers should respect one
-                another. Hackers also must abide by Princeton High School rules while on PHS grounds.
-            </p>
-        </details>
-        <details>
-            <summary>What can I win?</summary>
-            <p>hackPHS hopes to emphasize learning and collaboration more so than competition - nonetheless, there will
-                be awesome prizes to be won for some of the best hacks made during the event! The full prize list will
-                be released later - make sure to follow us on social media to find out when!
-            </p>
-        </details>
-        <details>
-            <summary>What can I learn?</summary>
-            <p>While you can learn a great deal in the process of building an ambitious project in such a limited time
-                frame, we also plan to offer many introductory workshops (around 1 hour each) during the event, for
-                those new to software and/or hardware engineering. Specific topics will include Python, Web Development,
-                and Circutry, among many others - check our schedule for the full list!
-            </p>
-        </details>
-        <details>
-            <summary>Where can I find hackPHS on social media?</summary>
-            <p>
-                Follow us on Instagram (<a href="https://www.instagram.com/hackphs/">@hackphs</a>)! We'll be posting updates as the event gets closer, so be sure to check it!
-            </p>
-        </details>
-        <details>
-            <summary>My question isn't answered here!</summary>
-            <p>
-                Email us at <a href="mailto:team@hackphs.tech">team@hackphs.tech</a> with any other questions about the
-                event!
-            </p>
-        </details>
-    </dialog>
-
-    <!-- Schedule popup -->
-    <dialog id="schedule" class="popup" aria-hidden="true">
-        <button class="close fa-solid fa-x" onclick="schedule.close();"></button>
-        <h1>Schedule</h1>
-        <i>hackPHS will run from 9:00AM on Saturday, 11/1 until 11:30AM on Sunday, 11/2. This schedule is not final and
-            <b>may change</b> before the event.</i>
-        <h2>Saturday 11/1</h2>
-        <table>
-            <thead>
-                <tr>
-                    <td>Time</td>
-                    <td>Event</td>
-                    <td>Location</td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>9:00AM</td>
-                    <td>Check in opens</td>
-                    <td>Cafeteria</td>
-                </tr>
-                <tr>
-                    <td>9:30AM</td>
-                    <td>Mini Programming Competition</td>
-                    <td>Cafeteria</td>
-                </tr>
-                <tr>
-                    <td>11:00AM</td>
-                    <td>Opening Ceremony</td>
-                    <td>Cafeteria</td>
-                </tr>
-                <tr>
-                    <td>12:00PM</td>
-                    <td>Hacking Starts</td>
-                    <td>Cafeteria</td>
-                </tr>
-                <tr>
-                    <td>12:00PM</td>
-                    <td>Team Building Workshop</td>
-                    <td>152</td>
-                </tr>
-                <tr>
-                    <td>1:00PM</td>
-                    <td>Lunch</td>
-                    <td>Cafeteria</td>
-                </tr>
-                <tr>
-                    <td>2:00PM</td>
-                    <td>Intro to Python</td>
-                    <td>155</td>
-                </tr>
-                <tr>
-                    <td>3:00PM</td>
-                    <td>Intro to Java</td>
-                    <td>153</td>
-                </tr>
-                <tr>
-                    <td>4:00PM</td>
-                    <td>Beginner's Challenge</td>
-                    <td>152</td>
-                </tr>
-                <tr>
-                    <td>4:00PM</td>
-                    <td>Sponsor Challenge</td>
-                    <td>153</td>
-                </tr>
-                <tr>
-                    <td>4:30PM</td>
-                    <td>Intro to Circuitry</td>
-                    <td>155</td>
-                </tr>
-                <tr>
-                    <td>5:30PM</td>
-                    <td>Intro to Finance in Computer Science</td>
-                    <td>155</td>
-                </tr>
-                <tr>
-                    <td>6:30PM</td>
-                    <td>Dinner</td>
-                    <td>Cafeteria</td>
-                </tr>
-                <tr>
-                    <td>7:00PM</td>
-                    <td>Photo Booth Opens</td>
-                    <td>Cafeteria</td>
-                </tr>
-                <tr>
-                    <td>7:30PM</td>
-                    <td>3D Design and Printing</td>
-                    <td>153</td>
-                </tr>
-                <tr>
-                    <td>7:30PM</td>
-                    <td>Sponsor Event</td>
-                    <td>155</td>
-                </tr>
-                <tr>
-                    <td>8:00PM</td>
-                    <td>Intro to Neural Networks</td>
-                    <td>153</td>
-                </tr>
-                <tr>
-                    <td>9:00PM</td>
-                    <td>Intro to Web Development</td>
-                    <td>153</td>
-                </tr>
-                <tr>
-                    <td>9:30PM</td>
-                    <td>MLH Mini-event</td>
-                    <td>152</td>
-                </tr>
-                <tr>
-                    <td>10:00PM</td>
-                    <td>Spikeball, Volleyball, Badminton</td>
-                    <td>New Gym</td>
-                </tr>
-                <tr>
-                    <td>11:00PM</td>
-                    <td>Chess Tournament</td>
-                    <td>153</td>
-                </tr>
-                <tr>
-                    <td>11:00PM</td>
-                    <td>Intro to Computational Mathemagics</td>
-                    <td>155</td>
-                </tr>
-        </table>
-
-        <h2>Sunday 11/2</h2>
-        <table>
-            <thead>
-                <tr>
-                    <td>Time</td>
-                    <td>Event</td>
-                    <td>Location</td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>12:00AM</td>
-                    <td>Midnight Snack</td>
-                    <td>Cafeteria</td>
-                </tr>
-                <tr>
-                    <td>12:00AM</td>
-                    <td>Karaoke + Games</td>
-                    <td>153</td>
-                </tr>
-                <tr>
-                    <td>7:30AM</td>
-                    <td>Breakfast</td>
-                    <td>Cafeteria</td>
-                </tr>
-                <tr>
-                    <td>9:00AM</td>
-                    <td>Submissions Close, Hacking Ends</td>
-                    <td>--</td>
-                </tr>
-                <tr>
-                    <td>9:00AM</td>
-                    <td>Spikeball</td>
-                    <td>New Gym</td>
-                </tr>
-                <tr>
-                    <td>9:30AM</td>
-                    <td>Engineering Challenge</td>
-                    <td>152</td>
-                </tr>
-                <tr>
-                    <td>9:30AM</td>
-                    <td>Judging Begins</td>
-                    <td>--</td>
-                </tr>
-                <tr>
-                    <td>11:30AM</td>
-                    <td>Closing Ceremony</td>
-                    <td>PAC</td>
-                </tr>
-            </tbody>
-        </table>
-    </dialog>
+    <img src="static/image2.png" id="birdy" />
 </body>
 
 </html>
