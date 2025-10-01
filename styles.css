@@ -322,6 +322,10 @@ body {
     #content h2 {
         font-size:2rem;
     }
+
+    #bg::after {
+        background-position-x: 90%;
+    }
 }
 
 @media screen and (max-width:500px) and (max-aspect-ratio:1) {
