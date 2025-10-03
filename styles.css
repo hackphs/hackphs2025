@@ -28,6 +28,7 @@
     --grad-2: rgb(247 177 176);
 
     background:--grad-1;
+    transition: --grad-1 0s, --grad-2 0s;
 }
 
 body {
@@ -51,7 +52,7 @@ body {
 #bg {
     background: var(--grad-1);
     background: linear-gradient(var(--grad-1) 0%, var(--grad-2) 100%);
-    transition: none;
+    transition: background 0s;
     transition-timing-function: linear;
 }
 

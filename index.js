@@ -95,13 +95,13 @@ function updateBGColor(scroll) {
     const midBot = [125, 70, 28];
     const endBot = [12,24,87];
     let top=0, bot=0;
-    if (scroll < 0.33) {
+    if (scroll < 0.333333) {
         top = lerp3(startTop,midTop,scroll*3);
         bot = lerp3(startBot,midBot,scroll*3);
     }
     else {
-        top = lerp3(midTop,endTop,(scroll-0.66)*3);
-        bot = lerp3(midBot,endBot,(scroll-0.66)*3);
+        top = lerp3(midTop,endTop,(scroll-0.333333)*3/2);
+        bot = lerp3(midBot,endBot,(scroll-0.333333)*3/2);
     }
     bg.style.setProperty("--grad-1",`rgb(${top[0]} ${top[1]} ${top[2]})`);
     bg.style.setProperty("--grad-2",`rgb(${bot[0]} ${bot[1]} ${bot[2]})`);
