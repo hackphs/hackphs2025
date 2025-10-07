@@ -42,7 +42,7 @@ body {
     position: relative;
 }
 
-#bg, #orange {
+#bg, #orange, #stars {
     position:fixed;
     z-index:-7;
     inset:0;
@@ -62,7 +62,7 @@ body {
     display: block;
     position: absolute;
     inset:0;
-    z-index:-10;
+    z-index:-6;
     background-image: url("static/mountain.svg");
 
     background-repeat: no-repeat;
@@ -82,20 +82,70 @@ body {
     inset:0;
     z-index:-8;
     /* background: #df763308; */
-    background-image: url("static/star.svg");
+    background-image: url("static/stars.svg");
 
     background-repeat: no-repeat;
     background-position-x: center;
     background-position-y: calc(50% + var(--scroll)*3vh);
     background-size: cover;
+    opacity:1;
     /* transform: scale(1.2); */
     /* filter: blur(min(calc(var(--scroll) * 4rem),2rem)); */
 
     transition:filter 0.2s;
 }
 
+@media screen and (max-width:650px) {
+    #bg::after {
+        opacity: calc(1 - var(--scroll) * var(--scroll));
+    }
+}
+
+@property --anim-time {
+    syntax: '<number>';
+    inherits: false;
+    initial-value: 0;
+}
+
+@keyframes twinkle {
+    0% {
+        --anim-time: 0.0;
+    }
+    50% {
+        --anim-time: 0.5;
+    }
+    100% {
+        --anim-time: 1.0;
+    }
+}
+
+#stars div.star {
+    --scale: calc((var(--scroll) + 1) * var(--scroll));
+    --offset:0;
+    --x-pos:1;
+    --y-pos:1;
+    --spd:1;
+    /* --anim-time: 0; */
+
+    /* opacity:calc(var(--scale) * sin(calc((var(--time) + var(--offset)) * 1deg))); */
+    opacity: calc(var(--scroll) * min(max(sin(var(--anim-time) * 2 * 3.1415 * var(--spd)) * 2 - 1,0),1));
+    /* --scale: var(--anim-time); */
+    position:absolute;
+    width:calc(0.4rem + var(--offset)*0.075rem);
+    height:calc(0.4rem + var(--offset)*0.075rem);
+    transform:scale(var(--scale));
+    background-image: url("static/star.svg");
+    background-size:cover;
+    background-position:center;
+    left: calc(var(--x-pos) * 100vw);
+    top: calc(var(--y-pos) * 100vh);
+
+    animation: twinkle 60s linear calc(var(--offset) * -60s) infinite;
+    transition: all 0.5s, left 0s, top 0s;
+}
+
 #orange {
-    z-index:-7;
+    z-index:-6;
     background: #df763320;
     opacity: max(calc(1 - var(--scroll)*2),0);
     transition: none;

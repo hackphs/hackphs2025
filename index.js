@@ -116,3 +116,24 @@ function updateBG() {
 
 window.addEventListener("scroll",updateBG);
 setInterval(updateBG,200);
+
+function makeStars() {
+    const n = 30;
+
+    /** @type {HTMLDivElement|null} */
+    const starsContainer = document.querySelector("#stars");
+    if (!starsContainer) return;
+    for (let i=0;i<n;i++) {
+        const star = document.createElement("div");
+        star.classList.add("star");
+
+        star.style.setProperty("--x-pos",Math.random());
+        star.style.setProperty("--y-pos",Math.random());
+        star.style.setProperty("--offset",Math.random()*10);
+        star.style.setProperty("--spd",Math.random()+1);
+
+        starsContainer.appendChild(star);
+    }
+}
+
+makeStars();
