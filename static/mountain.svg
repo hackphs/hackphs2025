@@ -732,28 +732,13 @@
         </clipPath>
     </defs>
     <g id="02892aeeaf">
-        <g clip-rule="nonzero" clip-path="url(#7655225726)">
-            <g clip-rule="nonzero" clip-path="url(#bee47f3f6f)">
-                <path style=" stroke:none;fill-rule:nonzero;fill:##ffa477;fill-opacity:1;"
-                    d="M 459.109375 311.519531 L 559.523438 311.519531 L 559.523438 411.929688 L 459.109375 411.929688 Z" />
-            </g>
-        </g>
-
         <!-- The ground -->
         <g clip-rule="nonzero" clip-path="url(#a105287ff9)">
-            <g mask="url(#650ad36c97)" transform="matrix(1,0,0,1,0,507)">
-                <g clip-path="url(#ca1aebb1dd)">
-                    <g clip-rule="nonzero" clip-path="url(#406673762b)">
-                        <path style=" stroke:none;fill-rule:nonzero;fill:#3d1e17;fill-opacity:1;"
-                            d="M 0 0 L 1100 0 L 1100 165 L 0 165 Z" />
-                    </g>
+            <g transform="matrix(1,0,0,1,0,507)">
+                <g clip-rule="nonzero" clip-path="url(#406673762b)">
+                    <path style=" stroke:none;fill-rule:nonzero;fill:#6a4944;fill-opacity:1;"
+                        d="M 0 0 L 1100 0 L 1100 165 L 0 165 Z" />
                 </g>
-                <mask id="650ad36c97">
-                    <g filter="url(#202a352717)">
-                        <rect x="0" width="1100" y="0" height="576"
-                            style="fill:#000000;fill-opacity:0.72;stroke:none;" />
-                    </g>
-                </mask>
             </g>
         </g>
 
@@ -929,6 +914,13 @@
         </g>
         <path style=" stroke:none;fill-rule:nonzero;fill:#ffffff;fill-opacity:1;"
             d="M 912.25 45.699219 L 921.425781 53.71875 L 913.410156 44.542969 L 921.425781 35.371094 L 912.25 43.386719 L 903.078125 35.371094 L 911.09375 44.542969 L 903.078125 53.71875 Z M 912.25 45.699219 " /> -->
+        
+        
+        
+        
+        
+        
+        
         <!-- Cacti -->
         <g clip-rule="nonzero" clip-path="url(#c17eb6627d)">
             <g clip-rule="nonzero" clip-path="url(#e50ce397db)">
