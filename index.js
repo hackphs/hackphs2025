@@ -109,7 +109,6 @@ function updateBGColor(scroll) {
 
 function updateBG() {
     const h = document.body.scrollHeight - window.innerHeight;
-    console.log(window.scrollY,h);
     updateBGColor(window.scrollY/h);
     document.body.style.setProperty("--scroll",Math.max(0,window.scrollY/h));
 }

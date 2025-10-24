@@ -567,12 +567,16 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    flex-wrap: wrap-reverse;
+    row-gap:1rem;
 }
 
 #contact {
     gap:1rem;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    row-gap:0.25rem;
 }
 
 .sponsor-section {
