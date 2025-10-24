@@ -137,3 +137,5 @@ function makeStars() {
 }
 
 makeStars();
+
+addEventListener("load",()=>setTimeout(()=>document.querySelector("#bg").classList.remove("no"),100));
