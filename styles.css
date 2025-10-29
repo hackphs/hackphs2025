@@ -600,8 +600,23 @@ footer {
     height:10rem;
 }
 
+
 .sponsor-section a.pure-buttons img {
     height:7rem;
+}
+
+@media screen and (max-width:450px) {
+    .sponsor-section a.pure-buttons img {
+        height:unset;
+        width:100%;
+    }
+}
+
+@media screen and (max-width:300px) {
+    .sponsor-section a.pure-buttons img {
+        height:unset;
+        width:100%;
+    }
 }
 
 .sponsor-section a:hover {
@@ -672,8 +687,7 @@ footer {
     text-decoration: none;
 }
 
-input,
-button, .button {
+#buttons button, #button .button {
     background: #0005;
     border: 1px #bbb solid;
     border-radius: 0.5rem;
@@ -687,19 +701,19 @@ button, .button {
     font-size: 1rem;
 }
 
-a.button {
+#buttons a.button {
     display:inline-block;
     &:hover {
         text-decoration: none;
     }
 }
 
-button:hover, .button:hover {
+#buttons button:hover, #buttons .button:hover {
     cursor: pointer;
     background: #ccc5;
 }
 
-button:active, .button:active {
+#buttons button:active, #buttons .button:active {
     top: 0.1rem;
 }
 
