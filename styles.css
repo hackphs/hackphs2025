@@ -731,7 +731,7 @@ footer {
     transition: right 1s;
 }
 
-.section-button {
+#buttons .section-button {
     box-sizing: border-box;
     z-index: 2;
     display: flex;
