@@ -671,3 +671,93 @@ footer {
     font-size: 4rem;
     text-decoration: none;
 }
+
+input,
+button, .button {
+    background: #0005;
+    border: 1px #bbb solid;
+    border-radius: 0.5rem;
+    backdrop-filter: blur(1rem);
+    -webkit-backdrop-filter: blur(1rem);
+    position: relative;
+    top: 0;
+    transition: top 0.1s, all 0.2s;
+
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+a.button {
+    display:inline-block;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+button:hover, .button:hover {
+    cursor: pointer;
+    background: #ccc5;
+}
+
+button:active, .button:active {
+    top: 0.1rem;
+}
+
+#buttons {
+    display: flex;
+    position: fixed;
+    box-sizing: border-box;
+    top: unset;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    z-index: 2;
+    flex-direction: row;
+    gap: .5rem;
+
+    transition: right 1s;
+}
+
+.section-button {
+    box-sizing: border-box;
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    height: 2.5rem;
+    aspect-ratio: 1;
+    font-size: 1.25rem;
+}
+
+#buttons.gone {
+    right:-100%;
+}
+
+@media screen and (max-width:800px) {
+    .section-button {
+        gap:0;
+    }
+
+    .section-button span {
+        width: 0;
+        overflow: hidden;
+        transition: width .5s;
+    }
+
+    .section-button:hover {
+        gap: 0.5rem;
+    }
+
+    #faq-button:hover span {
+        width: 4.2ch;
+    }
+
+    #schedule-button:hover span {
+        width: 7ch;
+    }
+
+    #sponsor-button:hover span {
+        width:7ch;
+    }
+}

@@ -105,6 +105,10 @@ function updateBGColor(scroll) {
     }
     bg.style.setProperty("--grad-1",`rgb(${top[0]} ${top[1]} ${top[2]})`);
     bg.style.setProperty("--grad-2",`rgb(${bot[0]} ${bot[1]} ${bot[2]})`);
+
+
+    if (window.scrollY > window.innerHeight/2) document.querySelector("#buttons").classList.add("gone");
+    else document.querySelector("#buttons").classList.remove("gone");
 }
 
 function updateBG() {
