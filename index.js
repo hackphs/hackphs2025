@@ -165,7 +165,7 @@ function addPics() {
 
 addPics();
 
-function resizePfps() {
+function resizePics() {
     const container = document.querySelector("div.photo-grid");
     const rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
     const width = container.clientWidth;
@@ -183,12 +183,12 @@ function resizePfps() {
 }
 
 window.addEventListener("resize", () => {
-    resizePfps();
-    setTimeout(resizePfps,500);
+    resizePics();
+    setTimeout(resizePics,500);
     console.log("bruh");
 
 });
-resizePfps();
+resizePics();
 
 /** @type {HTMLDialogElement} */
 const dialogBox = document.querySelector("#dial");
@@ -207,4 +207,26 @@ dialogBox.addEventListener("keydown",e=>{
 
 document.querySelector("#photo-close").addEventListener("click",()=>{
     dialogBox.querySelector("div.expanded").classList.remove("expanded");
+})
+
+const banner = document.querySelector("#banner");
+
+
+dialogBox.addEventListener("close",()=>{document.body.style.overflowY='unset'});
+
+function openDialog() {
+    dialogBox.showModal();
+    document.body.style.overflowY='hidden';
+    setTimeout(resizePics,400);
+}
+
+document.querySelector("#banner .x-button").addEventListener("click",()=>banner.classList.add("hidden"));
+
+/** @type {HTMLAnchorElement} */
+const registerButton = document.querySelector("a.button.register");
+const registerWarning = document.querySelector("#register-warning");
+registerButton.addEventListener("click",e=>{
+    e.preventDefault();
+
+    registerWarning.classList.add("show");
 })

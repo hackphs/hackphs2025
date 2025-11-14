@@ -246,7 +246,7 @@ body {
     top: 0;
     transition: top 0.1s, all 0.2s;
     display:inline-block;
-    font-size:30pt;
+    font-size:2.5rem;
     padding: 1rem;
     letter-spacing: 0.05rem;
     margin-top:1rem;
@@ -260,6 +260,7 @@ body {
 
     &:hover {
         background-position-x: 0%;
+        cursor:not-allowed;
     }
     &:active {
         top:0.1rem;
@@ -1039,7 +1040,11 @@ dialog:has(div.expanded) #photo-bg {
     transform: scale(1);
     display:inline-block;
 }
-
+@media screen and (max-width: 749px) {
+    #year>span.arrow i {
+        display: none;
+    }
+}
 @media screen and (min-width: 750px) {
     #year>span {
         text-decoration: underline;
@@ -1071,4 +1076,53 @@ dialog:has(div.expanded) #photo-bg {
         color:#76aef8;
         font-size:4rem;
     }
+}
+
+#banner {
+    left:0;
+    right:0;
+    top:0;
+    height:1rem;
+    padding:1rem;
+    background:gray;
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+#banner .x-button {
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+#banner a:hover {
+    color: #9ec8ff;
+}
+
+#banner.hidden {
+    display: none;
+}
+
+#banner span {
+    max-width: calc(100% - 100px);
+}
+
+#register-warning {
+    display: none;
+    background:rgba(0, 0, 0, 0.2);
+    max-width:50rch;
+    margin-top:1rem;
+    padding:1rem;
+    border-radius:1rem;
+    backdrop-filter:blur(1rem);
+    color:#eee;
+    font-style:italic;
+    font-size:0.75rem;
+}
+
+#register-warning.show {
+    display: block;
 }

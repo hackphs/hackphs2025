@@ -25,6 +25,10 @@
     <div id="bg" class="no">
         <div id="stars"></div>
     </div>
+    <div id="banner">
+        <span>hackPHS 2025 is <i>over</i>! See the event recap <a href="javascript:openDialog();">here</a>.</span>
+        <i class="x-button fa-solid fa-x"></i>
+    </div>
     <div id="orange"></div>
     <a id="mlh-trust-badge"
         style="display:block;max-width:100px;min-width:60px;position:fixed;right:50px;top:0;width:10%;z-index:10000"
@@ -60,6 +64,7 @@
             <a class="button register"
                 href="https://docs.google.com/forms/d/e/1FAIpQLScbSYgfmA4JRdIrHRyInVTRwsIOokYCf3FQEmV-aUlpHegA3w/viewform"
                 target="_blank"><span>Register</span> <i class="fa-solid fa-arrow-right"></i></a>
+            <div id="register-warning">Registrations for hackPHS 2025 are closed. If you'd still like to see the form, it's <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLScbSYgfmA4JRdIrHRyInVTRwsIOokYCf3FQEmV-aUlpHegA3w/viewform">here</a></div>
         </div>
         <div id="buttons">
             <!-- Button for sponsors -->
@@ -441,11 +446,6 @@
             <p id="participant-notice">P.S.: If you're a participant and <i>haven't</i> gotten your judging feedback, prize info, or are still unsure on <i>anything</i>, please DM an organizer ASAP!</p>
         </div>
     </dialog>
-    <script>
-        dial.showModal();
-        dial.addEventListener("close",()=>{document.body.style.overflowY='unset'});
-        document.body.style.overflowY='hidden';
-    </script>
 </body>
 
 </html>
