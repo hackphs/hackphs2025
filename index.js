@@ -219,7 +219,7 @@ function openDialog() {
     document.body.style.overflowY='hidden';
     setTimeout(resizePics,400);
 }
-
+openDialog();
 document.querySelector("#banner .x-button").addEventListener("click",()=>banner.classList.add("hidden"));
 
 /** @type {HTMLAnchorElement} */
