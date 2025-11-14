@@ -76,7 +76,7 @@ if (window.location.hash != '') {
     catch (e) { }
 }
 
-document.querySelector(".button.register").style = `font-size:${20 + Math.min(0.5 * (Date.now() - (new Date("9/12/2025")))/(1000*60*60*24),20)}pt`;
+// document.querySelector(".button.register").style = `font-size:${20 + Math.min(0.5 * (Date.now() - (new Date("9/12/2025")))/(1000*60*60*24),20)}pt`;
 
 const lerp = (a,b,amount) => a+(b-a)*amount;
 const lerp3 = (a,b,amount) => [lerp(a[0],b[0],amount),lerp(a[1],b[1],amount),lerp(a[2],b[2],amount)]
@@ -142,3 +142,69 @@ function makeStars() {
 makeStars();
 
 addEventListener("load",()=>setTimeout(()=>document.querySelector("#bg").classList.remove("no"),100));
+
+function addPics() {
+    const grid = document.querySelector("div.photo-grid");
+    const NUM_IMAGES = 75;
+    for (let i=1;i<=NUM_IMAGES;i++) {
+        const img = document.createElement("img");
+        img.src = `static/event/image-${i}.jpeg`;
+        const imgContainer = document.createElement("div");
+        imgContainer.addEventListener("click",function(e) {
+            /** @type {NodeListOf<HTMLDivElement>} */
+            const images = document.querySelectorAll("div.photo-grid>div");
+            const hasrn = this.classList.contains("expanded");
+            // this.classList.toggle("expanded");
+            images.forEach(el=>el.classList.remove("expanded"));
+            if (!hasrn) this.classList.add("expanded");
+        })
+        imgContainer.appendChild(img);
+        grid.appendChild(imgContainer);
+    }
+}
+
+addPics();
+
+function resizePfps() {
+    const container = document.querySelector("div.photo-grid");
+    const rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
+    const width = container.clientWidth;
+
+    // cols * tgt + (cols-1) * rem > width
+    // cols * (tgt+rem) > width + rem
+    // cols > width+rem
+    const tgt = parseFloat(document.querySelector("div.photo-grid").computedStyleMap().get("--tgt"));
+    console.log(tgt);
+    const cols = Math.trunc((width + rem) / ((tgt + 1) * rem));
+    // console.log(cols);
+    // console.log(cols * tgt * rem);
+    const leftOver = width - (cols - 1) * rem;
+    container.style.setProperty("--size", `${Math.trunc(leftOver / cols)}px`);
+}
+
+window.addEventListener("resize", () => {
+    resizePfps();
+    setTimeout(resizePfps,500);
+    console.log("bruh");
+
+});
+resizePfps();
+
+/** @type {HTMLDialogElement} */
+const dialogBox = document.querySelector("#dial");
+dialogBox.addEventListener("scroll",()=>{
+    dialogBox.style.setProperty("--scroll",dialogBox.scrollTop);
+});
+
+dialogBox.addEventListener("keydown",e=>{
+    if (e.key=="Escape") {
+        e.preventDefault();
+        const el = dialogBox.querySelector("div.expanded");
+        if (el) el.classList.remove("expanded");
+        else dialogBox.close();
+    }
+})
+
+document.querySelector("#photo-close").addEventListener("click",()=>{
+    dialogBox.querySelector("div.expanded").classList.remove("expanded");
+})

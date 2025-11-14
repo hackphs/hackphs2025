@@ -35,7 +35,21 @@
     <img id="icon" src="static/icon.svg" />
     <div id="outer">
         <div id="top-container">
-            <h1>hackPHS 2025</h1>
+            <h1>hackPHS <span id="year"><span>2025</span>
+                <div id="year-dropdown">
+                    <b>Past years</b>
+                    <hr>
+                    <a href="https://hackprincetonhs.github.io/hackphs2022/">2022</a>
+                    <hr>
+                    <a href="http://2021.hackphs.tech">2021</a>
+                    <hr>
+                    <a href="http://2020.hackphs.tech">2020</a>
+                    <hr>
+                    <a href="http://2019.hackphs.tech">2019</a>
+                    <hr>
+                    <a href="http://2018.hackphs.tech">2018</a>
+                </div>
+            </span></h1>
             <img id="icon-mobile" src="static/icon.svg" />
             <h2>11.01-11.02</h2>
             <div id="desc">
@@ -403,6 +417,35 @@
     </footer>
 
     <img src="static/image2.png" id="birdy" />
+
+    <dialog id="dial">
+        <button class="close" onclick="dial.close(); "><i class="fa-solid fa-x"></i></button>
+        <h1>
+            We're done!
+        </h1>
+        <br>
+        <div>
+            <p>
+                We had a blast hosting hackPHS, and know that every hacker had a <i>blast</i> being there!
+                <br><br>
+                You can see our gallery of projects on <a href="https://hackphs2025.devpost.com">our devpost</a>: every single one is legitimately <i>amazing</i> for our 24-hour time period, so I recommend that you check out all of them!
+                <br><br>
+                You can see some pictures of the event below: more will be posted on our <a href="https://www.instagram.com/hackphs">Instagram</a> as we get closer to next year's event!
+            </p>
+            <button id="photo-close" class="close"><i class="fa-solid fa-x"></i></button>
+            <div id="photo-bg"></div>
+            <div class="photo-grid">
+                
+            </div>
+
+            <p id="participant-notice">P.S.: If you're a participant and <i>haven't</i> gotten your judging feedback, prize info, or are still unsure on <i>anything</i>, please DM an organizer ASAP!</p>
+        </div>
+    </dialog>
+    <script>
+        dial.showModal();
+        dial.addEventListener("close",()=>{document.body.style.overflowY='unset'});
+        document.body.style.overflowY='hidden';
+    </script>
 </body>
 
 </html>

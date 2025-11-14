@@ -246,7 +246,7 @@ body {
     top: 0;
     transition: top 0.1s, all 0.2s;
     display:inline-block;
-    font-size:20pt;
+    font-size:30pt;
     padding: 1rem;
     letter-spacing: 0.05rem;
     margin-top:1rem;
@@ -545,7 +545,7 @@ tr td:nth-child(1) {
     padding: 0;
 }
 
-#content a:hover, footer a:hover * {
+#content a:hover, footer a:hover *, dialog a:hover {
     color: #76aef8;
 }
 
@@ -687,7 +687,7 @@ footer {
     text-decoration: none;
 }
 
-#buttons button, #button .button {
+#buttons button, #button .button, dialog button {
     background: #0005;
     border: 1px #bbb solid;
     border-radius: 0.5rem;
@@ -749,7 +749,7 @@ footer {
 }
 
 @media screen and (max-width:800px) {
-    .section-button {
+    #buttons .section-button {
         gap:0;
     }
 
@@ -773,5 +773,293 @@ footer {
 
     #sponsor-button:hover span {
         width:7ch;
+    }
+}
+
+dialog {
+    background-color: #0005;
+    backdrop-filter: blur(10px);
+    padding: 1rem;
+    box-sizing: border-box;
+
+}
+
+@media screen and (min-width:501px) and (min-height:401px) {
+    dialog {
+        min-width: calc(min(max(50%, 80ch), 100vw - 4rem));
+        max-width: calc(100vw - 4rem);
+        max-height: calc(100vh - 4rem);
+        border-radius: 1rem;
+        border: 1px solid white;
+    }
+
+    dialog::backdrop {
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+    }
+}
+
+@media screen and (max-width:600px),
+(max-height:400px) {
+    dialog {
+        border: none;
+        margin: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        box-sizing: border-box;
+        min-width: 100vw;
+        min-height: 100svh;
+        padding: 1.5rem;
+        border-radius: 0;
+    }
+
+
+}
+
+dialog h1 {
+    margin: 0;
+    font-size: 3rem;
+    text-align: center;
+}
+
+dialog button.close {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 1.25rem;
+    position: absolute;
+    z-index: 3;
+    top: 1.5rem;
+    right: 1.5rem;
+
+    &:active {
+        top: 1.6rem;
+    }
+
+    &:hover {
+        background: #ccc5;
+    }
+}
+
+#photo-close {
+    position:fixed;
+    z-index:100000000;
+    top: calc(2rem + var(--scroll)*1px);
+    right:2rem;
+    transform:scale(0);
+    background: #000a;
+    &:hover {
+        background: #888a;
+    }
+}
+
+dialog:has(.expanded) #photo-close {
+    transform: scale(1);
+}
+
+dialog[open] input {
+    width: calc(min(100%, 30ch));
+    font-size: 1.25rem;
+    padding: .25rem;
+}
+
+dialog[open] button,
+dialog[open] input {
+    background: #0003;
+}
+
+dialog {
+    opacity: 0;
+    transition: all .5s;
+}
+
+dialog:not([open]) {
+    display: block;
+    max-width: 0;
+    max-height: 0;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -100;
+}
+
+dialog[open] {
+    opacity: 1;
+}
+
+button.close:hover {
+    cursor: pointer;
+}
+
+dialog {
+    font-size:1.5rem;
+}
+
+#participant-notice {
+    font-size: 1rem;
+}
+
+div.photo-grid {
+    width:100%;
+    display: flex;
+    flex-direction:row;
+    gap:1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.photo-grid img {
+    /* height:15rem;
+    max-width: 20rem; */
+    height:100%;
+    width:100%;
+    object-fit: cover;
+}
+
+.photo-grid {
+    --size: 200px;
+    --tgt: 15;
+}
+
+@media screen and (max-width:1000px) {
+    .photo-grid {
+        --size: 200px;
+        /* --tgt: 8; */
+    }
+}
+
+.photo-grid div {
+    height:15rem;
+    width:var(--size);
+    position:relative;
+    border-radius:1rem;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    overflow:hidden;
+    /* transform:scale(1); */
+
+    /* transition:width 0s, transform 0.2s; */
+    /* transition:none; */
+}
+
+.photo-grid div.expanded {
+    overflow:unset;
+}
+
+.photo-grid div.expanded img {
+    position: fixed;
+    z-index:10000;
+    left:1rem;
+    top: calc(1rem + var(--scroll) * 1px);
+
+    height:calc(100% - 2rem);
+    width: calc(100% - 2rem);
+    object-fit: contain;
+    /* background:#0008; */
+    /* border: 2px solid transparent; */
+
+    transition: all 0.2s, top 0ms;
+}
+
+.photo-grid div.expanded img:hover {
+    /* border: 2px solid #76aef8; */
+    /* cursor: pointer; */
+}
+
+dialog:has(div.expanded) {
+    overflow:hidden;
+}
+
+dialog:has(div.expanded) #photo-bg {
+    background:#0008;
+    left:0;
+    right:0;
+    top:calc(var(--scroll)*1px);
+    height:100%;
+    position:fixed;
+    z-index:1000;
+}
+
+.photo-grid div::before {
+    content: "";
+    display: block;
+    position: absolute;
+    inset:0;
+    background:#0000;
+
+    border-radius:1rem;
+
+    transition:background 0.2s;
+}
+
+.photo-grid div:hover:not(.expanded) {
+    cursor:pointer;
+    border: 1px solid #76aef8;
+}
+
+.photo-grid div:hover::before {
+    background: #0004;
+}
+
+#year-dropdown {
+    position: absolute;
+    font-weight:normal;
+    font-size:2rem;
+    flex-direction: column;
+    gap:0.5rem;
+
+    transform:scale(0);
+    display: flex;
+    border-radius:1rem;
+    
+    padding:1rem;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(2rem);
+    -webkit-backdrop-filter: blur(2rem);
+    transform-origin: center top;
+}
+
+#year-dropdown b {
+    text-wrap-mode: nowrap;
+}
+
+#year-dropdown hr {
+    margin:0;
+}
+
+#year-dropdown a {
+    text-decoration: none;
+}
+#year {
+    transform: scale(1);
+    display:inline-block;
+}
+
+@media screen and (min-width: 750px) {
+    #year>span {
+        text-decoration: underline;
+    }
+
+    #year:hover>span {
+        color:#538ad1;
+        transform: scale(1.1);
+    }
+
+    #year>span:hover {
+        cursor:pointer;
+    }
+
+    #year:hover #year-dropdown {
+        transform:scale(1);
+    }
+    
+    #year-dropdown a:hover {
+        color:#76aef8;
+        font-size:4rem;
     }
 }
