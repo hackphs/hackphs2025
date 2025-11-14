@@ -1045,6 +1045,15 @@ dialog:has(div.expanded) #photo-bg {
         text-decoration: underline;
     }
 
+    #year>span.arrow i {
+        transform:translateX(-2rem) scale(0.25);
+    }
+
+    #year:hover>span.arrow>i {
+        color:#538ad1;
+        transform:rotateZ(180deg) translateX(2rem) scale(0.25);
+    }
+
     #year:hover>span {
         color:#538ad1;
         transform: scale(1.1);
