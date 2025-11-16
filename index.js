@@ -1,3 +1,12 @@
+// Mountain go up
+addEventListener("load",()=>{
+    setTimeout(()=>{
+        document.querySelector("#bg").classList.remove("no");
+        console.log("mountain go up");
+    },10);
+    console.log("ok doing it soon trust");
+});
+
 const button = document.querySelector("button");
 const form = document.querySelector("form");
 const emailInp = document.querySelector("input");
@@ -140,11 +149,9 @@ function makeStars() {
 
 makeStars();
 
-// Mountain go up
-addEventListener("load",()=>setTimeout(()=>document.querySelector("#bg").classList.remove("no"),10));
-
 // Dialog pictures
 function addPics() {
+    console.log("pictures added 🔥");
     const grid = document.querySelector("div.photo-grid");
     const NUM_IMAGES = 75;
     for (let i=1;i<=NUM_IMAGES;i++) {
@@ -182,7 +189,8 @@ function resizePics() {
 }
 
 // Add the pictures a bit later so the rest of the js isn't waiting on it
-setTimeout(addPics,10);
+console.log("ok we're adding them soon")
+setTimeout(addPics,100);
 
 window.addEventListener("resize", () => {
     resizePics();
