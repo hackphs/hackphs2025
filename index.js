@@ -156,7 +156,8 @@ function addPics() {
     const NUM_IMAGES = 75;
     for (let i=1;i<=NUM_IMAGES;i++) {
         const img = document.createElement("img");
-        img.src = `static/event/image-${i}.jpeg`;
+        addEventListener("load",()=>setTimeout(()=>{img.src=`static/event/image-${i}.jpeg`},50));
+        // img.src = `static/event/image-${i}.jpeg`;
         const imgContainer = document.createElement("div");
         imgContainer.addEventListener("click",function(e) {
             /** @type {NodeListOf<HTMLDivElement>} */
@@ -190,7 +191,7 @@ function resizePics() {
 
 // Add the pictures a bit later so the rest of the js isn't waiting on it
 console.log("ok we're adding them soon")
-setTimeout(addPics,1000);
+addPics();
 
 window.addEventListener("resize", () => {
     resizePics();
