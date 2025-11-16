@@ -190,7 +190,7 @@ function resizePics() {
 
 // Add the pictures a bit later so the rest of the js isn't waiting on it
 console.log("ok we're adding them soon")
-setTimeout(addPics,100);
+setTimeout(addPics,1000);
 
 window.addEventListener("resize", () => {
     resizePics();
