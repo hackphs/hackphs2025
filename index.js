@@ -4,6 +4,8 @@ const emailInp = document.querySelector("input");
 
 // om admits orz
 
+// not easter egg
+
 const lastPressed = []; // change
 const thing = []; // no change
 
@@ -66,10 +68,7 @@ window.addEventListener("keydown", e => {
     }
 });
 
-document.querySelectorAll("dialog").forEach(el => el.addEventListener("close", () => {
-    window.onbeforeunload = null;
-    window.location.hash = '';
-}));
+// easter egg dont see after this
 
 if (window.location.hash != '') {
     try { document.querySelector(window.location.hash).showModal(); }
@@ -141,8 +140,10 @@ function makeStars() {
 
 makeStars();
 
-addEventListener("load",()=>setTimeout(()=>document.querySelector("#bg").classList.remove("no"),100));
+// Mountain go up
+addEventListener("load",()=>setTimeout(()=>document.querySelector("#bg").classList.remove("no"),10));
 
+// Dialog pictures
 function addPics() {
     const grid = document.querySelector("div.photo-grid");
     const NUM_IMAGES = 75;
@@ -163,8 +164,6 @@ function addPics() {
     }
 }
 
-addPics();
-
 function resizePics() {
     const container = document.querySelector("div.photo-grid");
     const rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
@@ -182,6 +181,9 @@ function resizePics() {
     container.style.setProperty("--size", `${Math.trunc(leftOver / cols)}px`);
 }
 
+// Add the pictures a bit later so the rest of the js isn't waiting on it
+setTimeout(addPics,10);
+
 window.addEventListener("resize", () => {
     resizePics();
     setTimeout(resizePics,500);
@@ -190,11 +192,14 @@ window.addEventListener("resize", () => {
 });
 resizePics();
 
+// Dialog
+
 /** @type {HTMLDialogElement} */
 const dialogBox = document.querySelector("#dial");
 dialogBox.addEventListener("scroll",()=>{
     dialogBox.style.setProperty("--scroll",dialogBox.scrollTop);
 });
+
 
 dialogBox.addEventListener("keydown",e=>{
     if (e.key=="Escape") {
@@ -205,12 +210,7 @@ dialogBox.addEventListener("keydown",e=>{
     }
 })
 
-document.querySelector("#photo-close").addEventListener("click",()=>{
-    dialogBox.querySelector("div.expanded").classList.remove("expanded");
-})
-
-const banner = document.querySelector("#banner");
-
+document.querySelector("#photo-close").addEventListener("click",()=>dialogBox.querySelector("div.expanded").classList.remove("expanded"))
 
 dialogBox.addEventListener("close",()=>{document.body.style.overflowY='unset'});
 
@@ -220,7 +220,12 @@ function openDialog() {
     setTimeout(resizePics,400);
 }
 openDialog();
+
+// Banner
+const banner = document.querySelector("#banner");
 document.querySelector("#banner .x-button").addEventListener("click",()=>banner.classList.add("hidden"));
+
+// Register
 
 /** @type {HTMLAnchorElement} */
 const registerButton = document.querySelector("a.button.register");
