@@ -200,7 +200,7 @@ window.addEventListener("resize", () => {
 
 });
 resizePics();
-addEventListener("load",()=>setTimeout(addPics,500));
+// addEventListener("load",()=>setTimeout(addPics,500));
 
 // Dialog
 
